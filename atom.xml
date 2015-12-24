@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[craft的写字板]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://crafteverywhere.github.io/"/>
+  <updated>2015-12-24T16:33:30.502Z</updated>
+  <id>http://crafteverywhere.github.io/</id>
+  
+  <author>
+    <name><![CDATA[crafteverywhere]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[黑历史集散地]]></title>
+    <link href="http://crafteverywhere.github.io/2015/12/25/%E9%BB%91%E5%8E%86%E5%8F%B2%E9%9B%86%E6%95%A3%E5%9C%B0/"/>
+    <id>http://crafteverywhere.github.io/2015/12/25/黑历史集散地/</id>
+    <published>2015-12-24T16:33:30.542Z</published>
+    <updated>2015-12-24T16:33:30.502Z</updated>
+    <content type="html"><![CDATA[<p>圣诞前夜开通了博客，能记录生活的地方总有其意义。</p>
+<p>2015年行将过去，回头看过去，依然还是没做成哪怕微小的工作，偶有惶恐焦躁，有时又略微嫌弃这个厌恶成功学、又被成功学的逻辑逼到墙角的自己。意识到自己身上的理想主义色彩太浓厚，未必不是一件好事。我现在相信的是非常基本的逻辑：有价值的东西总归有价值，如果愿意为之付出，就无需考虑更多。总的来说，我挺喜欢自己致力于成为的样子。</p>
+<p>现在的博客使用 hexo 搭建在 github pages 上，觉得既然不会放太私密的信息，这样管理起来可以更加方便。<br>既然是半开放的空间，总不太好塞满私人情绪（我还是挺在意被视奸的人）。<br>以后这里大抵会主要放一些读书笔记，学习新东西的自我总结等等。希望能见证自己的一些成长吧。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>圣诞前夜开通了博客，能记录生活的地方总有其意义。</p>
+<p>2015年行将过去，回头看过去，依然还是没做成哪怕微小的工作，偶有惶恐焦躁，有时又略微嫌弃这个厌恶成功学、又被成功学的逻辑逼到墙角的自己。意识到自己身上的理想主义色彩太浓厚，未必不是一件好事。我现在相信的是非常]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
