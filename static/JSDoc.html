@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JSDoc 文档参考</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+    <table border="1" style="border-collapse:collapse" cellpadding="4">
+        <tbody>
+            <tr>
+                <th>标签</th>
+                <th>模板与示例</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>
+                    <a name="tag-author">@author</a>
+                </td>
+                <td>
+                    <code>@author username@google.com (first last)</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @fileoverview Utilities for handling textareas.
+    * @author kuth@google.com (Uthur Pendragon)
+    */
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    文件或测试文件的作者. 一般放在 <code>@fileoverview</code> 注释中.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-code">@code</a></td>
+                <td>
+                    <code>{@code ...}</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Moves to the next position in the selection.
+    * Throws {@code goog.iter.StopIteration} when it
+    * passes the end of the range.
+    * @return {Node} The node at the next position.
+    */                    
+    goog.dom.RangeIterator.prototype.next = function() {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    标示文档描述属于代码类型, 以便在生成的文档中被正确地格式化.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-const">@const</a></td>
+                <td>
+                    <code>@const</code>
+                    <br>
+                    <code>@const {type}</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @const */ var MY_BEER = 'stout';
+
+    /**
+    * My namespace's favorite kind of beer.
+    * @const {string}
+    */                     
+    mynamespace.MY_BEER = 'stout';
+
+    /** @const */ MyClass.MY_BEER = 'stout';
+
+    /**
+    * Initializes the request.
+    * @const
+    */
+    mynamespace.Request.prototype.initialize = function() {
+      // This method cannot be overridden in a subclass.
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    <p>
+                        标记变量或属性只读和适于内联.
+                    </p>
+                    <p>
+                        一个用<code>@const</code>标注的变量是一个指向某个值的不可变指针. 如果标注了
+                        <code>@const</code> 的变量和属性被重载, 则 JS 编译器会报警告.
+                    </p>
+                    <p>
+                        如果能够清楚地推断类型那么可以省略对常数的声明. 关于变量的额外注释可以缺省.
+                    </p>
+                    <p>
+                        当对方法使用 <code>@const</code> 注解, 则不仅意味着方法不能被重载, 也意味着该方法已经是<em>最终状态</em>, 在子类中也无法重载.
+                    </p>
+                    <p>
+                        更多关于 <code>@const</code> 的资料查看本指南的相关章节.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-constructor">@constructor</a></td>
+                <td>
+                    <code>@constructor</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * A rectangle.
+    * @constructor
+    */
+    function GM_Rect() {
+      //...
+    }    
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用在类的文档中以标示构造函数.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-define">@define</a></td>
+                <td>
+                    <code>@define {Type} description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @define {boolean} */
+    var TR_FLAGS_ENABLE_DEBUG = true;
+
+    /**
+    * @define {boolean} Whether we know at compile-time that
+    *     the browser is IE.
+    */
+                      goog.userAgent.ASSUME_IE = false;
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    标示一个可能会在编译时被重载的常量. 本例中, 编译器标示
+                    <code>--define='goog.userAgent.ASSUME_IE=true'</code> 可以在构建文件中定义, 用于指定 <code>goog.userAgent.ASSUME_IE</code> 常量是否应该被替换为 <code>true</code>.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-deprecated">@deprecated</a></td>
+                <td>
+                    <code>@deprecated Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Determines whether a node is a field.
+    * @return {boolean} True if the contents of
+    *     the element are editable, but the element
+    *     itself is not.
+    * @deprecated Use isField().
+    */
+    BN_EditUtil.isTopEditableField = function(node) {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于告诉函数, 方法或者属性是否应该被继续使用. 应该总能提供替代的调用方法.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-dict">@dict</a></td>
+                <td>
+                    <code>@dict Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @constructor
+    * @dict
+    */
+    function Foo(x) {
+      this['x'] = x;
+    }
+    var obj = new Foo(123);
+    var num = obj.x;  // warning
+
+    (/** @dict */ { x: 1 }).x = 123;  // warning    
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    当使用 <code>@dict</code> 注解构造函数(本例中是 <code>Foo</code> )时, 你只能使用花括号来访问 <code>Foo</code> 对象的属性. 注解也可以直接作为对象字面量使用.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-enum">@enum</a></td>
+                <td>
+                    <code>@enum {Type}</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Enum for tri-state values.
+    * @enum {number}
+    */
+    project.TriState = {
+      TRUE: 1,
+      FALSE: -1,
+      MAYBE: 0
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-export">@export</a></td>
+                <td>
+                    <code>@export</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @export */
+    foo.MyPublicClass.prototype.myPublicMethod = function() {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    <p>
+                        左侧给出的代码在编译器开启 <code>--generate_exports</code> 标示时会生产如下代码:
+                    </p>
+                    <div class="">
+                        <pre>
+                    <code>
+    goog.exportSymbol('foo.MyPublicClass.prototype.myPublicMethod',
+        foo.MyPublicClass.prototype.myPublicMethod);
+                    </code>
+                  </pre>
+                    </div>
+                    <p>
+                        这会导出到还未编译的代码中. 使用 <code>@export</code> 注解的代码必须
+                    </p>
+                    <ol>
+                        <li>包含 <code>//javascript/closure/base.js</code>, 或者</li>
+                        <li>基于自己的代码体系使用相同的方法签名同时定义 <code>goog.exportSymbol</code> 和 <code>goog.exportProperty</code>.</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-expose">@expose</a></td>
+                <td>
+                    <code>@expose</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @expose */
+    MyClass.prototype.exposedProperty = 3;
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    <p>
+                        声明一个公开属性. 公开属性无法被编译器以任何方式删除, 重命名, 禁用或优化. 同名属性也将无法被优化.
+                    </p>
+                    <p>
+                        <code>@expose</code> 永远不应该用于库代码. 因为它会阻止属性被删除.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-extends">@extends</a></td>
+                <td>
+                    <code>
+                    @extends Type<br>
+                    @extends {Type}
+                  </code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Immutable empty node list.
+    * @constructor
+    * @extends goog.ds.BasicNodeList
+    */
+    goog.ds.EmptyNodeList = function() {
+      ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    配合 <code>@constructor</code> 使用, 用以标示一个类继承自其他类. 类型周围的花括号可以缺省.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-externs">@externs</a></td>
+                <td>
+                    <code>@externs</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @fileoverview This is an externs file.
+    * @externs
+    */
+
+    var document;
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    <p>
+                        声明属于外部文件.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-fileoverview">@fileoverview</a></td>
+                <td>
+                    <code>@fileoverview Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @fileoverview Utilities for doing things that require this very long
+    * but not indented comment.
+    * @author kuth@google.com (Uthur Pendragon)
+    */
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>让注释块提供文件级信息.</td>
+            </tr>
+            <tr>
+                <td><a name="tag-implements">@implements</a></td>
+                <td>
+                    <code>
+                    @implements Type<br>
+                    @implements {Type}
+                  </code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * A shape.
+    * @interface
+    */
+    function Shape() {};
+    Shape.prototype.draw = function() {};
+
+    /**
+    * @constructor
+    * @implements {Shape}
+    */
+    function Square() {};
+    Square.prototype.draw = function() {
+      ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    配合 <code>@constructor</code> 使用, 用以标示类引入类一个接口. 类型周围的花括号可以缺省.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-inheritDoc">@inheritDoc</a></td>
+                <td>
+                    <code>@inheritDoc</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @inheritDoc */
+    project.SubClass.prototype.toString() {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    <p style="font-weight:bold">
+                        已废弃. 请使用 <code>@override</code> 替代其功能.
+                    </p>
+                    标示一个子类的方法或属性有意地隐藏父类的方法或属性, 而拥有完全相同的文档. 注意使用
+                    <code>@inheritDoc</code> 即等同于也使用了 <code>@override</code>.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-interface">@interface</a></td>
+                <td>
+                    <code>@interface</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * A shape.
+    * @interface
+    */
+    function Shape() {};
+    Shape.prototype.draw = function() {};
+
+    /**
+    * A polygon.
+    * @interface
+    * @extends {Shape}
+    */
+    function Polygon() {};
+    Polygon.prototype.getSides = function() {};
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于标示定义了接口的函数.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-lends">@lends</a></td>
+                <td>
+                    <code>@lends objectName</code>
+                    <br>
+                    <code>@lends {objectName}</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    goog.object.extend(
+      Button.prototype,
+      /** @lends {Button.prototype} */ {
+        isButton: function() { return true; }
+      });
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    标示对象的键应该被视为其他对象的属性. 该注解只能用于对象字面量.
+                    <p></p>
+                    注意花括号中的名字并非其他注解所用的类型名, 而是将属性"借出"的那个对象的名字. 例如, <code>@type {Foo}</code> 意思是" Foo 的实例", 但 <code>@lends {Foo}</code> 的意思却是"构造函数 Foo".
+                    <p></p>
+                    参考 <a href="http://code.google.com/p/jsdoc-toolkit/wiki/TagLends">
+                  JSDoc 工具文档</a> 来查看关于该注解的更多资料.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a name="tag-license">@license</a> or
+                    <a name="tag-preserve">@preserve</a>
+                </td>
+                <td>
+                    <code>@license Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @preserve Copyright 2009 SomeThirdParty.
+    * Here is the full license text and copyright
+    * notice for this file. Note that the notice can span several
+    * lines and is only terminated by the closing star and slash:
+    */
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    任何用 <code>@license</code> 或者
+                    <code>@preserve</code> 注解的内容编译器均予以保留并输出岛文件编译后代码的顶部. 这个注解允许一些重要的提示(如合法证书或者版权信息)在编译期间不变. 换行也会被保留.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-noalias">@noalias</a></td>
+                <td>
+                    <code>@noalias</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @noalias */
+    function Range() {}
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于外部文件中, 向编译器标示, 不应将变量或函数作为编译器向外部传递别名的一部分而对其使用别名.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-nocompile">@nocompile</a></td>
+                <td>
+                    <code>@nocompile</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @nocompile */
+
+    // JavaScript code
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于文件顶部, 告知编译器, 解析该文件但不要编译它. 使用该注解的代码并不需要编译, 在编译测试中应当被忽略(例如 bootstrap 代码). 成对使用.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-nosideeffects">@nosideeffects</a></td>
+                <td>
+                    <code>@nosideeffects</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @nosideeffects */
+    function noSideEffectsFn1() {
+      // ...
+    }
+
+    /** @nosideeffects */
+    var noSideEffectsFn2 = function() {
+      // ...
+    };
+
+    /** @nosideeffects */
+    a.prototype.noSideEffectsFn3 = function() {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    该注解可用于函数或者构造函数声明的一部分, 用于标示调用该函数不会造成副作用. 这个注解允许编译器在没有使用其返回值时移除对这些函数的调用.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-override">@override</a></td>
+                <td>
+                    <code>@override</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @return {string} Human-readable representation of project.SubClass.
+    * @override
+    */
+    project.SubClass.prototype.toString = function() {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    标示子类中被隐藏的父类方法和属性. 如果没有包含其他文档, 属性和方法会从其父类继承文档.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-param">@param</a></td>
+                <td>
+                    <code>@param {Type} varname Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Queries a Baz for items.
+    * @param {number} groupNum Subgroup id to query.
+    * @param {string|number|null} term An itemName,
+    *     or itemId, or null to search everything.
+    */
+    goog.Baz.prototype.query = function(groupNum, term) {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于方法, 函数或者构造函数来为函数参数添加文档.
+                    <p></p>
+                    <a href="#JsTypes">类型</a>名需要括起在花括号中. 如果类型被省略, 则编译器不会检测参数的类型.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-private">@private</a></td>
+                <td>
+                    <code>@private</code>
+                    <br>
+                    <code>@private {type}</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Handlers that are listening to this logger.
+    * @private {!Array.&lt;Function&gt;}
+    */
+    this.handlers_ = [];
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    配合方法和属性名尾部的下划线来标示该成员变量为
+                    <a href="#Visibility__private_and_protected_fields_">私有类型</a>, 且不会再改变(final).
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-protected">@protected</a></td>
+                <td>
+                    <code>@protected</code>
+                    <br>
+                    <code>@protected {type}</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Sets the component's root element to the given element.
+    * @param {Element} element Root element for the component.
+    * @protected
+    */
+    goog.ui.Component.prototype.setElementInternal = function(element) {
+      // ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于标示成员或属性为
+                    <a href="#Visibility__private_and_protected_fields_">受限类型</a>. 应当配合那些名字没有尾部下划线的成员或属性使用.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-public">@public</a></td>
+                <td>
+                    <code>@public</code>
+                    <br>
+                    <code>@public {type}</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Whether to cancel the event in internal capture/bubble processing.
+    * @public {boolean}
+    * @suppress {visiblity} Referencing this outside this package is strongly
+    * discouraged.
+    */
+                      goog.events.Event.prototype.propagationStopped_ = false;
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于标示成员或属性为公共类型. 默认情况下变量和属性就属于公共类型, 因此这条注解很少用到. 仅仅用于一些不会很轻易被作为私有变量重载可见性的成员上.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-return">@return</a></td>
+                <td>
+                    <code>@return {Type} Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @return {string} The hex ID of the last item.
+    */
+    goog.Baz.prototype.getLastId = function() {
+      // ...
+      return id;
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    配合方法和函数来为返回值添加文档. 当为布尔量编写描述时, 优先使用"Whether the component is visible"而非"True if the component is visible, false otherwise"这样的句式. 如果无返回值, 则不应该使用 <code>@return</code> 标签.
+                    <p></p>
+                    <a href="#JsTypes">类型</a>名应当括起在花括号中. 如果类型名被省略, 编译器不会对返回值进行类型检查.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-see">@see</a></td>
+                <td>
+                    <code>@see Link</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * Adds a single item, recklessly.
+    * @see #addSafely
+    * @see goog.Collect
+    * @see goog.RecklessAdder#add
+    ...
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>引用一个对其他类的函数和方法的查询.</td>
+            </tr>
+            <tr>
+                <td><a name="tag-struct">@struct</a></td>
+                <td>
+                    <code>@struct Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @constructor
+    * @struct
+    */
+    function Foo(x) {
+      this.x = x;
+    }
+    var obj = new Foo(123);
+    var num = obj['x'];  // warning
+    obj.y = "asdf";  // warning
+                     
+    Foo.prototype = /** @struct */ {
+      method1: function() {}
+    };
+    Foo.prototype.method2 = function() {};  // warning
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    当对构造函数(本例中为 <code>Foo</code> )使用 <code>@struct</code> 注解后, 你将只能用点运算符去访问 <code>Foo</code> 对象的属性. 同时, 你也无法在创建之后再向 <code>Foo</code> 对象添加新属性. 该注解也可以直接用于对象字面量.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-supported">@supported</a></td>
+                <td>
+                    <code>@supported Description</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @fileoverview Event Manager
+    * Provides an abstracted interface to the
+    * browsers' event systems.
+    * @supported So far tested in IE6 and FF1.5
+    */
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    用于文件概述中用于标示支持该文件的浏览器.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-suppress">@suppress</a></td>
+                <td>
+                    <code>
+                    @suppress {warning1|warning2}
+                  </code>
+                    <code>
+                    @suppress {warning1,warning2}
+                  </code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @suppress {deprecated}
+    */
+    function f() {
+      deprecatedVersionOfF();
+    }
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    抑制工具发出的警告. 警告分类使用 <code>|</code> 或者 <code>,</code> 来分隔.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-template">@template</a></td>
+                <td>
+                    <code>@template</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * @param {function(this:T, ...)} fn
+    * @param {T} thisObj
+    * @param {...*} var_args
+    * @template T
+    */
+    goog.bind = function(fn, thisObj, var_args) {
+      ...
+    };
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    该注解用于声明
+                    <a href="#Template_types">模板类型名</a>.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-this">@this</a></td>
+                <td>
+                    <code>
+                    @this Type<br>
+                    @this {Type}
+                  </code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    pinto.chat.RosterWidget.extern('getRosterElement',
+        /**
+        * Returns the roster widget element.
+        * @this pinto.chat.RosterWidget
+        * @return {Element}
+        */
+        function() {
+          return this.getWrappedComponent_().getElement();
+        });
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    该类型的对象处于一个特定方法被调用的上下文中. 当 <code>this</code> 关键字被一个非原型方法的函数所引用时需要使用该注解.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-type">@type</a></td>
+                <td>
+                    <code>
+                    @type Type<br>
+                    @type {Type}
+                  </code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /**
+    * The message hex ID.
+    * @type {string}
+    */
+    var hexId = hexId;
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    标示变量, 属性, 表达式的 <a href="#JsTypes">类型</a>. 一般不要求在变量周围用花括号, 但某些项目会出于一致性考虑对所有类型都这样做.
+                </td>
+            </tr>
+            <tr>
+                <td><a name="tag-typedef">@typedef</a></td>
+                <td>
+                    <code>@typedef</code>
+                    <p><i>示例:</i></p>
+                    <div class="">
+                        <pre>
+                    <code>
+    /** @typedef {(string|number)} */
+    goog.NumberLike;
+
+    /** @param {goog.NumberLike} x A number or a string. */
+    goog.readNumber = function(x) {
+      ...
+    }
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    该注解用于声明一个更
+                    <a href="#Typedefs">复杂类型</a>的别名.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

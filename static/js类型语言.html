@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS 类型语言语言表格</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+    <table border="1" style="border-collapse:collapse" cellpadding="4">
+        <tbody>
+            <tr>
+                <th>语法类型</th>
+                <th>语法</th>
+                <th>描述</th>
+                <th>废弃语法</th>
+            </tr>
+            <tr>
+                <td>基本类型</td>
+                <td>
+                    JS 中共有5种基本类型:
+                    <code>{null}</code>,
+                    <code>{undefined}</code>,
+                    <code>{boolean}</code>,
+                    <code>{number}</code> 和
+                    <code>{string}</code>.
+                </td>
+                <td>基本类型的名称.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>实例类型</td>
+                <td>
+                    <code>{Object}</code>
+                    <br> 对象实例或 null.
+                    <p></p>
+                    <code>{Function}</code>
+                    <br> 函数实例或 null.
+                    <p></p>
+                    <code>{EventTarget}</code>
+                    <br> 引入 EventTarget 的构造函数实例, 或 null.
+                </td>
+                <td>构造函数或接口函数的实例.
+                    <p></p>
+                    构造函数是使用 JSDoc 标签 <code>@constructor</code> 定义的函数. 接口函数指使用 JSDoc 标签 <code>@interface</code> 定义的函数.
+                    <p></p>
+                    默认情况下, 实例类型可以是 null. 这是本表中列出的唯一可以让类型为 null 的类型语法.
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>枚举类型</td>
+                <td>
+                    <code>{goog.events.EventType}</code>
+                    <br> One of the properties of the object literal initializer of <code>goog.events.EventType</code>.
+                </td>
+                <td>枚举类型必须作为对象字面量或者其他枚举类型的别名来初始化, 可以使用 JSDoc 标签 <code>@enum</code> 来标注. 字面量的属性即枚举类型的实例. 枚举类型的语法定义<a href="#枚举类型">如下</a>.
+                    <p></p>
+                    注意本条是我们的类型系统中少数不属于 ES4 规范的.
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>类型应用</td>
+                <td>
+                    <code>{Array.&lt;string&gt;}</code>
+                    <br>字符串数组
+                    <p></p>
+                    <code>{Object.&lt;string, number&gt;}</code>
+                    <br>键与值为数字的对象.
+                </td>
+                <td>通过对该类型指定一组类型参数来参数化类型. 此想法可以类比 Java 的泛型.
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>联合类型</td>
+                <td>
+                    <code>{(number|boolean)}</code>
+                    <br>数字或布尔量.
+                </td>
+                <td>指出一个类型可能是类型 A 或者类型 B.
+                    <p></p>
+                    在最高一级的表达式中圆括号可以省略, 但为了避免歧义在子表达式中应该使用圆括号.
+                    <br>
+                    <code>{number|boolean}</code>
+                    <br>
+                    <code>{function(): (number|boolean)}</code>
+                </td>
+                <td>
+                    <code>{(number,boolean)}</code>,
+                    <br>
+                    <code>{(number||boolean)}</code>
+                </td>
+            </tr>
+            <tr>
+                <td>可空类型</td>
+                <td>
+                    <code>{?number}</code>
+                    <br> 数字或 null.
+                </td>
+                <td>null 类型和任意其他类型的联合类型的简写方法. 只是一种语法糖.
+                </td>
+                <td>
+                    <code>{number?}</code>
+                </td>
+            </tr>
+            <tr>
+                <td>不可空类型</td>
+                <td>
+                    <code>{!Object}</code>
+                    <br> 值绝对不能为 <code>null</code> 的对象.
+                </td>
+                <td>会从可空类型中过滤 null 类型. 经常用于默认为可空类型的实例类型.
+                </td>
+                <td>
+                    <code>{Object!}</code>
+                </td>
+            </tr>
+            <tr>
+                <td>记录类型</td>
+                <td>
+                    <code>{{myNum: number, myObject}}</code>
+                    <br>指定类型成员的匿名类型.
+                </td>
+                <td>
+                    <p>标识含有属于指定类型的指定成员. 在本例中, <code>myNum</code> 的类型为 <code>number</code> 而 <code>myObject</code> 的类型则未指定.
+                    </p>
+                    <p>
+                        注意花括号是这种类型语法的一部分. 例如, 想要在对象的 <code>Array</code> 中包含一个 <code>length</code> 属性, 你应该写作 <code>Array.&lt;{length}&gt;</code>.
+                    </p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>函数类型</td>
+                <td>
+                    <code>{function(string, boolean)}</code>
+                    <br> 包含两个参数(一个字符串类型和一个布尔类型), 并且返回值类型未知.
+                    <br>
+                </td>
+                <td>标识一个函数.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>函数返回类型</td>
+                <td>
+                    <code>{function(): number}</code>
+                    <br> 无参函数返回类型为数字.
+                    <br>
+                </td>
+                <td>标识一个函数的返回类型.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>函数 <code>this</code> 类型</td>
+                <td>
+                    <code>{function(this:goog.ui.Menu, string)}</code>
+                    <br> 接受字符串作为参数, 并且在 goog.ui.Menu 的上下文中运行的函数.
+                </td>
+                <td>指定函数类型的上下文类型.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>函数 <code>new</code> 类型</td>
+                <td>
+                    <code>{function(new:goog.ui.Menu, string)}</code>
+                    <br> 接受字符串作为参数, 并且使用 new 关键字在 goog.ui.Menu 中创建实例的构造函数.
+                </td>
+                <td>指定构造器的构造类型.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>可变参数</td>
+                <td>
+                    <code>{function(string, ...[number]): number}</code>
+                    <br> 接受字符串作为其中一个参数, 其他不定参数类型为数字的函数.
+                </td>
+                <td>标示函数不定参数类型.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <a name="var-args-annotation"></a>
+                    可变参数 (在 <code>@param</code> 标注中)
+                </td>
+                <td>
+                    <code>@param {...number} var_args</code>
+                    <br> 所标注的函数的可变参数的参数数量.
+                </td>
+                <td>
+                    标识被标注的函数接受可变参数的参数数量.
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>函数可缺省参数</a>
+                </td>
+                <td>
+                    <code>{function(?string=, number=)}</code>
+                    <br> 接受一个可缺省, 可为空的字符串参数和一个数字参数的函数. <code>=</code> 语法仅用于 <code>function</code> 类型声明.
+                </td>
+                <td>标识函数的可缺省参数.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <a name="optional-arg-annotation"></a>
+                    函数可缺省参数 </a> (在 <code>@param</code> 标注中)
+                </td>
+                <td>
+                    <code>@param {number=} opt_argument</code>
+                    <br> 类型为 <code>number</code> 的可缺省参数.
+                </td>
+                <td>标示被标注的函数接受一个可缺省参数.
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>所有类型</td>
+                <td><code>{*}</code></td>
+                <td>通配, 标示变量可以是任何类型.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>未知类型</td>
+                <td><code>{?}</code></td>
+                <td>标识变量可能是任意类型, 编译器不应该对它的使用进行任何类型检查.</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

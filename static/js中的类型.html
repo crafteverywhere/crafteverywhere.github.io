@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JS 中的类型</title>
+    <link rel="stylesheet" href="table.css">
+</head>
+
+<body>
+    <table border="1" style="border-collapse:collapse" cellpadding="4">
+        <tbody>
+            <tr>
+                <th>类型示例</th>
+                <th>变量示例</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>number</td>
+                <td>
+                    <div>
+                        <pre>
+    1
+    1.0
+    -5
+    1e5
+    Math.PI
+                  </pre>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Number</td>
+                <td>
+                    <div><pre>new Number(true)</pre></div>
+                </td>
+                <td>
+                    <a href="#Wrapper_objects_for_primitive_types">
+                    Number 对象
+                  </a>
+                </td>
+            </tr>
+            <tr>
+                <td>string</td>
+                <td>
+                    <div>
+                        <pre>
+    'Hello'
+    "World"
+    String(42)
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    String 值
+                </td>
+            </tr>
+            <tr>
+                <td>String</td>
+                <td>
+                    <div>
+                        <pre>
+    new String('Hello')
+    new String(42)
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    <a>
+                  String 对象
+                </a>
+                </td>
+            </tr>
+            <tr>
+                <td>boolean</td>
+                <td>
+                    <div>
+                        <pre>
+    true
+    false
+    Boolean(0)
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    Boolean 值
+                </td>
+            </tr>
+            <tr>
+                <td>Boolean</td>
+                <td>
+                    <div><pre>new Boolean(true)</pre></div>
+                </td>
+                <td>
+                    <a>
+                  Boolean 对象
+                </a>
+                </td>
+            </tr>
+            <tr>
+                <td>RegExp</td>
+                <td>
+                    <div>
+                        <pre>
+    new RegExp('hello')
+    /world/g
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td>
+                    <div>
+                        <pre>
+    new Date
+    new Date()
+                  </pre>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    null
+                </td>
+                <td>
+                    <div>
+                        <pre>
+    null
+                  </pre>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    undefined
+                </td>
+                <td>
+                    <div>
+                        <pre>
+    undefined
+                  </pre>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>void</td>
+                <td>
+                    <div>
+                        <pre>
+                    <code>
+    function f() {
+      return;
+    }
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>无返回值</td>
+            </tr>
+            <tr>
+                <td>Array</td>
+                <td>
+                    <div>
+                        <pre>
+    ['foo', 0.3, null]
+    []
+                  </pre>
+                    </div>
+                </td>
+                <td>无类型数组</td>
+            </tr>
+            <tr>
+                <td>Array.&lt;number&gt;</td>
+                <td>
+                    <div>
+                        <pre>
+    [11, 22, 33]
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    数字数组
+                </td>
+            </tr>
+            <tr>
+                <td>Array.&lt;Array.&lt;string&gt;&gt;</td>
+                <td>
+                    <div><pre>[['one', 'two', 'three'], ['foo', 'bar']]</pre></div>
+                </td>
+                <td>字符串数组的数组</td>
+            </tr>
+            <tr>
+                <td>Object</td>
+                <td>
+                    <div><pre>{}
+{foo: 'abc', bar: 123, baz: null}</pre></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Object.&lt;string&gt;</td>
+                <td>
+                    <div><pre>{'foo': 'bar'}</pre></div>
+                </td>
+                <td>
+                    值为字符串的对象.
+                </td>
+            </tr>
+            <tr>
+                <td>Object.&lt;number, string&gt;</td>
+                <td>
+                    <div><pre>var obj = {};
+obj[1] = 'bar';</pre></div>
+                </td>
+                <td>
+                    键为数字而值为字符串的对象.
+                    <p></p>
+                    注意在 JS 中, 键总是显式地转化为字符串类型, 因此 <code>obj['1'] == obj[1]</code>. 所以在 for...in 循环中键总是字符串类型. 但是, 当索引对象时, 编译器可以做到核验键的类型.
+                </td>
+            </tr>
+            <tr>
+                <td>Function</td>
+                <td>
+                    <div><pre>
+function(x, y) {
+  return x * y;
+}</pre></div>
+                </td>
+                <td>
+                    <a>
+                    Function 对象
+                  </a>
+                </td>
+            </tr>
+            <tr>
+                <td>function(number, number): number</td>
+                <td>
+                    <div><pre>
+function(x, y) {
+  return x * y;
+}
+                </pre></div>
+                </td>
+                <td>function value</td>
+            </tr>
+            <tr>
+                <td><a name="constructor-tag">SomeClass</a></td>
+                <td>
+                    <div>
+                        <pre>
+                    <code>
+/** @constructor */
+function SomeClass() {}
+
+new SomeClass();
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SomeInterface</td>
+                <td>
+                    <div>
+                        <pre>
+                    <code>
+/** @interface */
+function SomeInterface() {}
+
+SomeInterface.prototype.draw = function() {};
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>project.MyClass</td>
+                <td>
+                    <div>
+                        <pre>
+                    <code>
+/** @constructor */
+project.MyClass = function () {}
+
+new project.MyClass()
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>project.MyEnum</td>
+                <td>
+                    <div>
+                        <pre>
+                    <code>
+/** @enum {string} */
+project.MyEnum = {
+  /** The color blue. */
+  BLUE: '#0000dd',
+  /** The color red. */
+  RED: '#dd0000'
+};
+                    </code>
+                  </pre>
+                    </div>
+                </td>
+                <td>
+                    <a name="enums">Enumeration</a>
+                    <p></p>
+                    对枚举类型的JSDoc 注释是可缺省的.
+                </td>
+            </tr>
+            <tr>
+                <td>Element</td>
+                <td>
+                    <div><pre>document.createElement('div')</pre></div>
+                </td>
+                <td>DOM 的元素.</td>
+            </tr>
+            <tr>
+                <td>Node</td>
+                <td>
+                    <div><pre>document.body.firstChild</pre></div>
+                </td>
+                <td>DOM 的节点.</td>
+            </tr>
+            <tr>
+                <td>HTMLInputElement</td>
+                <td>
+                    <div><pre>htmlDocument.getElementsByTagName('input')[0]</pre></div>
+                </td>
+                <td>标示 DOM 元素的类型.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
