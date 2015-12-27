@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[craft的写字板]]></title>
-  
+  <title><![CDATA[Zen]]></title>
+  <subtitle><![CDATA[craft‘s note]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://crafteverywhere.github.io/"/>
-  <updated>2015-12-26T22:39:39.275Z</updated>
-  <id>http://crafteverywhere.github.io/</id>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-12-27T06:32:29.463Z</updated>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name><![CDATA[crafteverywhere]]></name>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[Google JS 代码风格指南（5）]]></title>
-    <link href="http://crafteverywhere.github.io/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%885%EF%BC%89/"/>
-    <id>http://crafteverywhere.github.io/2015/12/27/Google-JS-代码风格指南（5）/</id>
-    <published>2015-12-26T22:39:39.275Z</published>
-    <updated>2015-12-26T22:39:39.275Z</updated>
+    <link href="http://yoursite.com/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%885%EF%BC%89/"/>
+    <id>http://yoursite.com/2015/12/27/Google-JS-代码风格指南（5）/</id>
+    <published>2015-12-27T06:32:29.463Z</published>
+    <updated>2015-12-27T06:32:29.463Z</updated>
     <content type="html"><![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title="JavaScript 代码风格指南"></a>JavaScript 代码风格指南</h2><p>这份指南列出了编写 JavaScript 时需要遵守的规范, 指明哪些应该<strong>提倡</strong>, 哪些应该<del>避免</del>.<br>本文基于 google 的规范翻译整理(JavaScript 是许多 Google 开源项目使用的主要客户端脚本语言).</p>
 <h3 id="285_29"><a href="#285_29" class="headerlink" title="(5)"></a>(5)</h3><h3 id="JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_284_29"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_284_29" class="headerlink" title="JavaScript 代码风格规范(4)"></a>JavaScript 代码风格规范(4)</h3><p><strong> 编译 </strong></p>
 <blockquote>
@@ -53,12 +53,14 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (y) &#123;</span><br></pre></td></tr></table></figure>
 <p>警告: 还有很多不那么直观的布尔表达式, 比如下面这些:</p>
 <ul>
-<li>Boolean(‘0’) == true<br><br>‘0’ != true</li>
-<li>0 != null<br><br>0 == []<br><br>0 == false</li>
-<li>Boolean(null) == false<br><br>null != true<br><br>null != false</li>
-<li>Boolean(undefined) == false<br><br>undefined != true<br><br>undefined != false</li>
-<li>Boolean([]) == true<br><br>[] != true<br><br>[] == false</li>
-<li>Boolean({}) == true<br><br>{} != true<br><br>{} != false</li>
+<li><code>Boolean(&#39;0&#39;) == true</code><br><code>&#39;0&#39; != true</code></li>
+<li><code>0 != null</code><br><code>0 == []</code><br><code>0 == false</code></li>
+<li><code>Boolean(null) == false</code><br><code>null != true</code><br><code>null != false</code></li>
+<li><code>Boolean(undefined) == false</code><br><code>undefined != true</code><br><code>undefined != false</code></li>
+<li><p><code>Boolean([]) == true</code><br><code>[] != true</code><br><code>[] == false</code></p>
+</li>
+<li><p><code>Boolean({}) == true</code><br><code>{} != true</code><br><code>{} != false</code></p>
+</li>
 </ul>
 <h6 id="u6761_u4EF6_u64CD_u4F5C_u7B26/_u4E09_u5143_u64CD_u4F5C_u7B26__28_3F_3A_29"><a href="#u6761_u4EF6_u64CD_u4F5C_u7B26/_u4E09_u5143_u64CD_u4F5C_u7B26__28_3F_3A_29" class="headerlink" title="条件操作符/三元操作符 (?:)"></a>条件操作符/三元操作符 (?:)</h6><p>与其这样写:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (val) &#123;</span><br><span class="line">  <span class="keyword">return</span> foo();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> bar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -68,24 +70,25 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html = <span class="string">'&lt;input type="checkbox"'</span> +</span><br><span class="line">    (isChecked ? <span class="string">' checked'</span> : <span class="string">''</span>) +</span><br><span class="line">    (isEnabled ? <span class="string">''</span> : <span class="string">' disabled'</span>) +</span><br><span class="line">    <span class="string">' name="foo"&gt;'</span>;</span><br></pre></td></tr></table></figure>
 <p>#####　&amp;&amp; and ||</p>
 <p>这些二元布尔操作符都可以进行短路求值，　以此来决定是否需要计算最后一项．</p>
-<p>“||” 有时也被认为默认操作符，　因为与其写成这样:</p>
+<p><code>||</code> 有时也被认为默认操作符，　因为与其写成这样:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** @param &#123;*=&#125; opt_win */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">opt_win</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> win;</span><br><span class="line">  <span class="keyword">if</span> (opt_win) &#123;</span><br><span class="line">    win = opt_win;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    win = <span class="built_in">window</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其实还可以写成这样:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** @param &#123;*=&#125; opt_win */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">opt_win</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> win = opt_win || <span class="built_in">window</span>;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>“&amp;&amp;”也能够用于缩短代码. 举例来说, 与其这样写:</p>
+<p><code>&amp;&amp;</code> 也能够用于缩短代码. 举例来说, 与其这样写:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (node) &#123;</span><br><span class="line">  <span class="keyword">if</span> (node.kids) &#123;</span><br><span class="line">    <span class="keyword">if</span> (node.kids[index]) &#123;</span><br><span class="line">      foo(node.kids[index]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>不如像这样写:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (node &amp;&amp; node.kids &amp;&amp; node.kids[index]) &#123;</span><br><span class="line">  foo(node.kids[index]);</span><br><span class="line">&#125;</span><br><span class="line">or <span class="keyword">this</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> kid = node &amp;&amp; node.kids &amp;&amp; node.kids[index];</span><br><span class="line"><span class="keyword">if</span> (kid) &#123;</span><br><span class="line">  foo(kid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>不过如何像这样, 就有点玩过头了:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node &amp;&amp; node.kids &amp;&amp; node.kids[index] &amp;&amp; foo(node.kids[index]);</span><br></pre></td></tr></table></figure>
-<h6 id="u8FED_u4EE3_u8282_u70B9_u5217_u8868"><a href="#u8FED_u4EE3_u8282_u70B9_u5217_u8868" class="headerlink" title="迭代节点列表"></a>迭代节点列表</h6><p>通常我们使用过滤器将节点列表作为节点迭代器引入. 这意味着得到节点的属性所需的时间复杂度为 O(n), 而通过 <figure class="highlight"><figcaption><span>遍历整个列表则需要 O(n^2).</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;```javascript&#10;var paragraphs = document.getElementsByTagName(&#39;p&#39;);&#10;for (var i = 0; i &#60; paragraphs.length; i++) &#123;&#10;  doSomething(paragraphs[i]);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="u8FED_u4EE3_u8282_u70B9_u5217_u8868"><a href="#u8FED_u4EE3_u8282_u70B9_u5217_u8868" class="headerlink" title="迭代节点列表"></a>迭代节点列表</h6><p>通常我们使用过滤器将节点列表作为节点迭代器引入. 这意味着得到节点的属性所需的时间复杂度为 O(n), 而通过 <code>length</code> 遍历整个列表则需要 O(n^2).</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> paragraphs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; paragraphs.length; i++) &#123;</span><br><span class="line">  doSomething(paragraphs[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>更好的写法是这样的:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> paragraphs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, paragraph; paragraph = paragraphs[i]; i++) &#123;</span><br><span class="line">  doSomething(paragraph);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这种写法适合于各种集合和数组, 只要数组元素中不包含为假值的布尔量.</p>
-<p>你也可以使用 firstChild 和 nextSibling 来遍历子节点.</p>
+<p>你也可以使用 <code>firstChild</code> 和 <code>nextSibling</code> 来遍历子节点.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> parentNode = <span class="built_in">document</span>.getElementById(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> child = parentNode.firstChild; child; child = child.nextSibling) &#123;</span><br><span class="line">  doSomething(child);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="u7ED3_u8BED"><a href="#u7ED3_u8BED" class="headerlink" title="结语"></a>结语</h3><p>保持风格统一.</p>
-<p>如果你正在编辑代码, 花几分钟检测下手头的代码来确定它属于何种风格. 如果他们都在运算符周围使用空格, 那你也应该照办. 热罨法他们的注释都放在用虚线围成的小盒子里, 那你的注释也同样应该用虚线小盒子围起来.</p>
+<p>如果你正在编辑代码, 花几分钟检测下手头的代码来确定它属于何种风格. 如果他们都在运算符周围使用空格, 那你也应该照办. 如果他们的注释都放在用虚线围成的小盒子里, 那你的注释也同样应该用虚线小盒子围起来.</p>
 <p>使用代码风格规范的重点在于, 建立一个共通的代码语汇, 这样人们就能将重点更多放在你要表述的内容而非你怎样去表述内容. 我们提出一份基本的规范让人们了解这些语汇, 但具体项目中使用的局部规范也很重要. 如果你编写的代码看上去与项目中已经存在的其他代码大相径庭, 那么就会扰乱阅读者的节奏. 理应避免这样.</p>
 <ul>
 <li>修订版本 2.93</li>
@@ -108,27 +111,33 @@
     <![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title]]>
     </summary>
     
-      <category term="JavaScript" scheme="http://crafteverywhere.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Google JS 代码风格指南（4）]]></title>
-    <link href="http://crafteverywhere.github.io/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%884%EF%BC%89/"/>
-    <id>http://crafteverywhere.github.io/2015/12/27/Google-JS-代码风格指南（4）/</id>
-    <published>2015-12-26T22:39:05.022Z</published>
-    <updated>2015-12-26T22:39:05.022Z</updated>
+    <link href="http://yoursite.com/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%884%EF%BC%89/"/>
+    <id>http://yoursite.com/2015/12/27/Google-JS-代码风格指南（4）/</id>
+    <published>2015-12-27T06:31:32.423Z</published>
+    <updated>2015-12-27T06:31:32.423Z</updated>
     <content type="html"><![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title="JavaScript 代码风格指南"></a>JavaScript 代码风格指南</h2><p>这份指南列出了编写 JavaScript 时需要遵守的规范, 指明哪些应该<strong>提倡</strong>, 哪些应该<del>避免</del>.<br>本文基于 google 的规范翻译整理(JavaScript 是许多 Google 开源项目使用的主要客户端脚本语言).</p>
 <h3 id="284_29"><a href="#284_29" class="headerlink" title="(4)"></a>(4)</h3><h3 id="JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_283_29"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_283_29" class="headerlink" title="JavaScript 代码风格规范(3)"></a>JavaScript 代码风格规范(3)</h3><h4 id="u6CE8_u91CA"><a href="#u6CE8_u91CA" class="headerlink" title="注释"></a>注释</h4><p>使用 JSDoc.</p>
 <blockquote>
 <p>在精神上, 我们遵循<a href="http://google.github.io/styleguide/cppguide.xml#Comments" target="_blank" rel="external"> C++ 注释风格</a>的指导.</p>
 </blockquote>
 <p>所有文件, 类, 方法和属性都应该通过合适的<a href="http://google.github.io/styleguide/javascriptguide.xml#JSDoc_Tag_Reference" target="_blank" rel="external">标签</a>和<a href="http://google.github.io/styleguide/javascriptguide.xml#JsTypes" target="_blank" rel="external">类型说明</a>使用 <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank" rel="external">JSDoc</a> 进行注释. 除非从属性, 方法和参数的命名中可以清晰地判断其用途, 否则在注释中应当包含对属性, 方法, 方法参数和方法返回值的文字描述.</p>
-<p>行内注释应当使用 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#25512;&#33616;&#22312;&#27880;&#37322;&#20013;&#20351;&#29992;&#23436;&#25972;&#30340;&#21477;&#23376;, &#20294;&#19981;&#20570;&#20005;&#26684;&#35201;&#27714;. &#23436;&#25972;&#21477;&#23376;&#24212;&#24403;&#27491;&#30830;&#20351;&#29992;&#22823;&#23567;&#20889;&#21644;&#26631;&#28857;&#31526;&#21495;.&#10;&#10;** &#27880;&#37322;&#35821;&#27861; **&#10;&#10;JSDoc &#30340;&#35821;&#27861;&#22522;&#20110; [JavaDoc](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html). &#26377;&#35768;&#22810;&#24037;&#20855;&#21487;&#20197;&#20174; JSDoc &#27880;&#37322;&#20013;&#25552;&#21462;&#20803;&#25968;&#25454;&#26469;&#25191;&#34892;&#20195;&#30721;&#26657;&#39564;&#21644;&#20248;&#21270;. &#36825;&#20123;&#27880;&#37322;&#24517;&#39035;&#36981;&#24490;&#27491;&#30830;&#30340;&#26684;&#24335;.&#10;&#10;```javascript&#10;/**&#10; * JSDoc &#30340;&#27880;&#37322;&#24212;&#24403;&#20197;&#26012;&#21010;&#32447;&#21644;&#20004;&#20010;&#26143;&#21495;&#25171;&#22836;.&#10; * &#34892;&#20869;&#26631;&#31614;&#24212;&#35813;&#25918;&#22312;&#38381;&#21512;&#30340;&#33457;&#25324;&#21495;&#20013;, &#23601;&#20687;&#36825;&#26679;: &#123;@code this&#125;.&#10; * @desc &#22359;&#32423;&#26631;&#31614;&#24212;&#24403;&#24635;&#26159;&#21478;&#36215;&#26032;&#34892;.&#10; */</span><br></pre></td></tr></table></figure></p>
+<p>行内注释应当使用 <code>//</code>.</p>
+<p>推荐在注释中使用完整的句子, 但不做严格要求. 完整句子应当正确使用大小写和标点符号.</p>
+<p><strong> 注释语法 </strong></p>
+<p>JSDoc 的语法基于 <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html" target="_blank" rel="external">JavaDoc</a>. 有许多工具可以从 JSDoc 注释中提取元数据来执行代码校验和优化. 这些注释必须遵循正确的格式.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * JSDoc 的注释应当以斜划线和两个星号打头.</span><br><span class="line"> * 行内标签应该放在闭合的花括号中, 就像这样: &#123;@code this&#125;.</span><br><span class="line"> * @desc 块级标签应当总是另起新行.</span><br><span class="line"> */</span></span><br></pre></td></tr></table></figure>
 <p><strong> JSDoc 缩进 </strong></p>
 <p>如果你需要对一个块级标签折行, 你应当就像视其为代码块那样缩进 4 格.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 长参数和返回值描述的折行处理示例.</span><br><span class="line"> * @param &#123;string&#125; foo 这是某个参数的描述, 由于太长太长太长太长太长太长太长以至于一行内</span><br><span class="line"> *     有点放不下.</span><br><span class="line"> * @return &#123;number&#125; 这是某个返回值的描述, 由于太长太长太长太长太长太长太长以至于一行内</span><br><span class="line"> *     有点放不下.</span><br><span class="line"> */</span></span><br><span class="line">project.MyClass.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params">foo</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>你不应该缩进 <figure class="highlight"><figcaption><span>命令. 你不必缩进 ```@desc``` 命令.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;&#21363;&#20351;&#24182;&#19981;&#25512;&#33616;, &#20294;&#23545;&#40784;&#32553;&#36827;&#30340;&#26041;&#24335;&#20063;&#21487;&#20197;&#25509;&#21463;.&#10;&#10;```javascript&#10;/**&#10; * &#24182;&#19981;&#25512;&#33616;&#30340;&#32553;&#36827;&#26041;&#24335;..&#10; * @param &#123;string&#125; foo &#36825;&#26159;&#26576;&#20010;&#21442;&#25968;&#30340;&#25551;&#36848;, &#30001;&#20110;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#20197;&#33267;&#20110;&#19968;&#34892;&#20869;&#10; *                     &#26377;&#28857;&#25918;&#19981;&#19979;.&#10; * @return &#123;number&#125; &#36825;&#26159;&#26576;&#20010;&#36820;&#22238;&#20540;&#30340;&#25551;&#36848;, &#30001;&#20110;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#22826;&#38271;&#20197;&#33267;&#20110;&#19968;&#34892;&#20869;&#10; *                  &#26377;&#28857;&#25918;&#19981;&#19979;.&#10; */&#10;project.MyClass.prototype.method = function(foo) &#123;&#10;  return 5;&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>你不应该缩进 <code>@fileoverview</code> 命令. 你不必缩进 <code>@desc</code> 命令.</p>
+<p>即使并不推荐, 但对齐缩进的方式也可以接受.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 并不推荐的缩进方式..</span><br><span class="line"> * @param &#123;string&#125; foo 这是某个参数的描述, 由于太长太长太长太长太长太长太长以至于一行内</span><br><span class="line"> *                     有点放不下.</span><br><span class="line"> * @return &#123;number&#125; 这是某个返回值的描述, 由于太长太长太长太长太长太长太长以至于一行内</span><br><span class="line"> *                  有点放不下.</span><br><span class="line"> */</span></span><br><span class="line">project.MyClass.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params">foo</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong> JSDoc 中的 HTML </strong></p>
 <p>类似 JavaDoc, JSDoc 也支持许多 HTML 标签, 诸如 <code>&lt;code&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;tt&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;a&gt;</code> 等等.</p>
 <p>这意味着最好不要对纯文本格式化, 不要依赖用空格来格式化 JSDoc:</p>
@@ -194,16 +203,16 @@
     <![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title]]>
     </summary>
     
-      <category term="JavaScript" scheme="http://crafteverywhere.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Google JS 代码风格指南（3）]]></title>
-    <link href="http://crafteverywhere.github.io/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%883%EF%BC%89/"/>
-    <id>http://crafteverywhere.github.io/2015/12/27/Google-JS-代码风格指南（3）/</id>
-    <published>2015-12-26T22:37:37.208Z</published>
-    <updated>2015-12-26T22:37:37.208Z</updated>
+    <link href="http://yoursite.com/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%883%EF%BC%89/"/>
+    <id>http://yoursite.com/2015/12/27/Google-JS-代码风格指南（3）/</id>
+    <published>2015-12-27T06:31:01.518Z</published>
+    <updated>2015-12-27T06:31:01.518Z</updated>
     <content type="html"><![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title="JavaScript 代码风格指南"></a>JavaScript 代码风格指南</h2><p>这份指南列出了编写 JavaScript 时需要遵守的规范, 指明哪些应该<strong>提倡</strong>, 哪些应该<del>避免</del>.<br>本文基于 google 的规范翻译整理(JavaScript 是许多 Google 开源项目使用的主要客户端脚本语言).</p>
 <h3 id="283_29"><a href="#283_29" class="headerlink" title="(3)"></a>(3)</h3><h3 id="JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_282_29"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_282_29" class="headerlink" title="JavaScript 代码风格规范(2)"></a>JavaScript 代码风格规范(2)</h3><h4 id="Javascript__u7C7B_u578B"><a href="#Javascript__u7C7B_u578B" class="headerlink" title="Javascript 类型"></a>Javascript 类型</h4><p>鼓励和强制使用编译器.</p>
 <p>既然使用 JSDoc 来文档化, 那就尽可能规范和准确. 支持的类型基于 <a href="http://wiki.ecmascript.org/doku.php?id=spec:spec" target="_blank" rel="external">EcmaScript 4 spec</a>.</p>
@@ -222,66 +231,96 @@
 <p>由于 JS 属于弱类型语言. 因此理解可缺省, 可空和未定义函数参数和类属性之间的微妙差异是非常重要的.</p>
 <p>接口以及类的实例默认是可空类型. 例如下面的声明:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 一些类, 用一个值来初始化.</span><br><span class="line"> * @param &#123;Object&#125; value Some value.</span><br><span class="line"> * @constructor</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">/**</span><br><span class="line">   * 一些值.</span><br><span class="line">   * @type &#123;Object&#125;</span><br><span class="line">   * @private</span><br><span class="line">   */</span></span><br><span class="line">  <span class="keyword">this</span>.myValue_ = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>告诉编译器 myValue<em> 属性既可能是对象也可能是 null. 如果不允许 myValue</em> 为 null 则应该像这样声明:</p>
+<p>告诉编译器 <code>myValue_</code> 属性既可能是对象也可能是 <code>null</code>. 如果不允许 <code>myValue_</code> 为 <code>null</code> 则应该像这样声明:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Some class, initialized with a non-null value.</span><br><span class="line"> * @param &#123;!Object&#125; value Some value.</span><br><span class="line"> * @constructor</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">/**</span><br><span class="line">   * Some value.</span><br><span class="line">   * @type &#123;!Object&#125;</span><br><span class="line">   * @private</span><br><span class="line">   */</span></span><br><span class="line">  <span class="keyword">this</span>.myValue_ = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果采用这种方式, 当编译器检测到某段代码中 MyClass 使用 null 来初始化时, 就会报警告.</p>
+<p>如果采用这种方式, 当编译器检测到某段代码中 <code>MyClass</code> 使用 <code>null</code> 来初始化时, 就会报警告.</p>
 <p>函数的可缺省参数在运行时可能是未定义的, 因此如果它们被赋给类的属性, 这些属性必须相应地声明:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 一些类, 包含可缺省参数被初始化.</span><br><span class="line"> * @param &#123;Object=&#125; opt_value Some value (optional).</span><br><span class="line"> * @constructor</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyClass</span>(<span class="params">opt_value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">/**</span><br><span class="line">   * 一些值.</span><br><span class="line">   * @type &#123;Object|undefined&#125;</span><br><span class="line">   * @private</span><br><span class="line">   */</span></span><br><span class="line">  <span class="keyword">this</span>.myValue_ = opt_value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上述代码告诉编译器 myValue_ 可能包含一个对象, null 或未定义类型.</p>
-<p>注意可缺省参数 opt_value 以类型 {Object=} 来声明, 而非 {Object|undefined}. 这是因为可缺省参数也有可能会是未定义类型. 虽然显式地说明可缺省变量可能是未定义类型并不会有什么害处, 但是这样既无必要也会降低代码的可读性.</p>
+<p>上述代码告诉编译器 <code>myValue_</code> 可能包含一个对象, <code>null</code> 或未定义类型.</p>
+<p>注意可缺省参数 <code>opt_value</code> 以类型 <code>{Object=}</code> 来声明, 而非 <code>{Object|undefined}</code>. 这是因为可缺省参数也有可能会是未定义类型. 虽然显式地说明可缺省变量可能是未定义类型并不会有什么害处, 但是这样既无必要也会降低代码的可读性.</p>
 <p>最后, 注意可空类型和可缺省类型都是正交属性. </p>
 <p>下面的四种声明都是不同的:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 接受 4 格参数, 其中两个是可空类型, 两个是可缺省类型.</span><br><span class="line"> * @param &#123;!Object&#125; nonNull Mandatory (must not be undefined), must not be null.</span><br><span class="line"> * @param &#123;Object&#125; mayBeNull Mandatory (must not be undefined), may be null.</span><br><span class="line"> * @param &#123;!Object=&#125; opt_nonNull Optional (may be undefined), but if present,</span><br><span class="line"> *     must not be null!</span><br><span class="line"> * @param &#123;Object=&#125; opt_mayBeNull Optional (may be undefined), may be null.</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">strangeButTrue</span>(<span class="params">nonNull, mayBeNull, opt_nonNull, opt_mayBeNull</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong> 类型定义 </strong></p>
 <p>有时类型可以变得非常复杂. 一个接受某个元素内容的函数可能看上去会是这样:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * @param &#123;string&#125; tagName</span><br><span class="line"> * @param &#123;(string|Element|Text|Array.&lt;Element&gt;|Array.&lt;Text&gt;)&#125; contents</span><br><span class="line"> * @return &#123;!Element&#125;</span><br><span class="line"> */</span></span><br><span class="line">goog.createElement = <span class="function"><span class="keyword">function</span>(<span class="params">tagName, contents</span>) </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>你可以使用 @typedef 来标记常见的类型表达式, 比如:</p>
+<p>你可以使用 <code>@typedef</code> 来标记常见的类型表达式, 比如:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** @typedef &#123;(string|Element|Text|Array.&lt;Element&gt;|Array.&lt;Text&gt;)&#125; */</span></span><br><span class="line">goog.ElementContent;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * @param &#123;string&#125; tagName</span><br><span class="line"> * @param &#123;goog.ElementContent&#125; contents</span><br><span class="line"> * @return &#123;!Element&#125;</span><br><span class="line"> */</span></span><br><span class="line">goog.createElement = <span class="function"><span class="keyword">function</span>(<span class="params">tagName, contents</span>) </span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p><strong> 模板类型 </strong></p>
-<p>编译器已经对模板类提供了有限度的支持. 它只能通过 this 参数的类型和 this 参数是否遗失来判断匿名函数字面量中的 this 类型.</p>
+<p>编译器已经对模板类提供了有限度的支持. 它只能通过 <code>this</code> 参数的类型和 <code>this</code> 参数是否遗失来判断匿名函数字面量中的 <code>this</code> 类型.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * @param &#123;function(this:T, ...)&#125; fn</span><br><span class="line"> * @param &#123;T&#125; thisObj</span><br><span class="line"> * @param &#123;...*&#125; var_args</span><br><span class="line"> * @template T</span><br><span class="line"> */</span></span><br><span class="line">goog.bind = <span class="function"><span class="keyword">function</span>(<span class="params">fn, thisObj, var_args</span>) </span>&#123;</span><br><span class="line">...</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 可能会产生属性遗失的警告.</span></span><br><span class="line">goog.bind(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">this</span>.someProperty; &#125;, <span class="keyword">new</span> SomeClass());</span><br><span class="line"><span class="comment">// 会产生未定义 this 的警告.</span></span><br><span class="line">goog.bind(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">this</span>.someProperty; &#125;);</span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title]]>
     </summary>
     
-      <category term="JavaScript" scheme="http://crafteverywhere.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Google JS 代码风格指南（2）]]></title>
-    <link href="http://crafteverywhere.github.io/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%882%EF%BC%89/"/>
-    <id>http://crafteverywhere.github.io/2015/12/27/Google-JS-代码风格指南（2）/</id>
-    <published>2015-12-26T22:37:34.480Z</published>
-    <updated>2015-12-26T22:37:34.480Z</updated>
+    <link href="http://yoursite.com/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%882%EF%BC%89/"/>
+    <id>http://yoursite.com/2015/12/27/Google-JS-代码风格指南（2）/</id>
+    <published>2015-12-27T06:29:46.422Z</published>
+    <updated>2015-12-27T06:29:46.422Z</updated>
     <content type="html"><![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title="JavaScript 代码风格指南"></a>JavaScript 代码风格指南</h2><p>这份指南列出了编写 JavaScript 时需要遵守的规范, 指明哪些应该<strong>提倡</strong>, 哪些应该<del>避免</del>.<br>本文基于 google 的规范翻译整理(JavaScript 是许多 Google 开源项目使用的主要客户端脚本语言).</p>
 <h3 id="282_29"><a href="#282_29" class="headerlink" title="(2)"></a>(2)</h3><h3 id="JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_281_29"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u89C4_u8303_281_29" class="headerlink" title="JavaScript 代码风格规范(1)"></a>JavaScript 代码风格规范(1)</h3><h4 id="u547D_u540D_u89C4_u8303"><a href="#u547D_u540D_u89C4_u8303" class="headerlink" title="命名规范"></a>命名规范</h4><ul>
 <li>一般情况下,按下列命名规范即可:</li>
-<li>函数命名: functionNamesLikeThis (首字母小写驼峰式)</li>
-<li>变量命名: variableNamesLikeThis (首字母小写驼峰式)</li>
-<li>类命名: ClassNamesLikeThis (首字母大写驼峰式)</li>
-<li>枚举量命名: EnumNamesLikeThis (首字母大写驼峰式)</li>
-<li>方法命名: methodNamesLikeThis (首字母小写驼峰式)</li>
-<li>常量命名: CONSTANT_VALUES_LIKE_THIS (全字母大写下划线式)</li>
-<li>命名空间命名: foo.namespaceNamesLikeThis.bar (首字母小写驼峰式)</li>
-<li>文件命名: filenameslikethis.js (全小写)</li>
+<li>函数命名: <code>functionNamesLikeThis</code> (首字母小写驼峰式)</li>
+<li>变量命名: <code>variableNamesLikeThis</code> (首字母小写驼峰式)</li>
+<li>类命名: <code>ClassNamesLikeThis</code> (首字母大写驼峰式)</li>
+<li>枚举量命名: <code>EnumNamesLikeThis</code> (首字母大写驼峰式)</li>
+<li>方法命名: <code>methodNamesLikeThis</code> (首字母小写驼峰式)</li>
+<li>常量命名: <code>CONSTANT_VALUES_LIKE_THIS</code> (全字母大写下划线式)</li>
+<li>命名空间命名: <code>foo.namespaceNamesLikeThis.bar</code> (首字母小写驼峰式)</li>
+<li>文件命名: <code>filenameslikethis.js</code> (全小写)</li>
+</ul>
+<p>译者附注：<br>在 google 规范的基础上， 我们还可以作如下调整：<br>变量命名在局部作用域使用 <code>variable_names_like_this</code> 全小写下划线分隔<br>变量命名在模块作用域使用 <code>variableNamesLikeThis</code> 首字母小写驼峰式</p>
+<p>变量命名的基本规范：</p>
+<ul>
+<li>变量名只使用 a~z, A~Z, 0~9, 下划线， 中划线和 $ 符号.</li>
+<li>变量名不能数字开头.</li>
+</ul>
+<p>应该在布尔量前加上前缀来区别于普通变量</p>
+<ul>
+<li>通用 <code>bool_var</code> <code>boolVar</code></li>
+<li>请求 <code>do_verb</code> <code>doVerb</code></li>
+<li>包含 <code>has_var</code> <code>hasVar</code></li>
+<li>状态 <code>is_var</code> <code>isVar</code></li>
+<li>绑定事件 ‘on_var’ ‘onVar’</li>
+</ul>
+<p>对正则变量加上前缀 <code>regex</code>, 如 <code>regex_var</code> 和 <code>regexVar</code>.</p>
+<p>变量后可以选择加后缀来标识其用途，如果处于合理的伪命名空间中，也可以不用:</p>
+<ul>
+<li>通用 <code>var_str</code> <code>varStr</code></li>
+<li>标识 <code>var_id</code> <code>varId</code></li>
+<li>HTML <code>var_html</code> <code>varHtml</code></li>
+<li>消息 <code>var_msg</code> <code>varMsg</code></li>
+<li>名字 <code>var_name</code> <code>varName</code></li>
+<li>文本 <code>var_text</code> <code>varText</code></li>
+<li>类型 <code>var_type</code> <code>var_Type</code></li>
+<li>图片 <code>var_img</code> <code>varImg</code></li>
+<li>声音 <code>var_snd</code> <code>varSnd</code></li>
+<li>列表 <code>var_list</code> <code>varList</code></li>
+<li>数据 <code>var_data</code> <code>varData</code></li>
+<li>映射 <code>var_map</code> <code>varMap</code></li>
 </ul>
 <p><strong> 属性和方法 </strong></p>
 <ul>
-<li>私有(<em> private </em>)属性和方法命名应该以下划线 _ 开头;</li>
-<li>受限(<em> protected </em>)属性和方法不需要下划线开头, 和公共变量保持一致.</li>
+<li>私有(<em> <code>private</code> </em>)属性和方法命名应该以下划线 _ 开头;</li>
+<li>受限(<em> <code>protected</code> </em>)属性和方法不需要下划线开头, 和公共变量保持一致.</li>
 </ul>
-<p>想要查阅更多关于 private 和 protected 的资料, 可以阅读本指南的<strong> 可见性 </strong>部分.</p>
+<p>想要查阅更多关于 <code>private</code> 和 <code>protected</code> 的资料, 可以阅读本指南的<strong> 可见性 </strong>部分.</p>
 <p><strong> 方法和函数参数 </strong></p>
-<p>可缺省函数参数以 opt_ 开头.</p>
-<p>如果函数拥有不定参数, 那么应该添加一个名为 var_args 的参数作为最后一个参数. 如果不想在代码中使用 var_args , 也可以使用 arguments 伪数组.</p>
-<p>可缺省参数和不定参数可以使用 @param 标记. 尽管是否这样做对解释器来说都可以接受, 但都使用是推荐的做法.</p>
+<p>可缺省函数参数以 <code>opt_</code> 开头.</p>
+<p>如果函数拥有不定参数, 那么应该添加一个名为 <code>var_args</code> 的参数作为最后一个参数. 如果不想在代码中使用 <code>var_args</code> , 也可以使用 <code>arguments</code> 伪数组.</p>
+<p>可缺省参数和不定参数可以使用 <code>@param</code> 标记. 尽管是否这样做对解释器来说都可以接受, 但都使用是推荐的做法.</p>
 <p><strong> 属性访问器 (Getters 和 Setters) </strong></p>
-<p>EcmaScript 5 不推荐使用对象属性的 getters 和 setters.<br>然而, 如果你已经使用了它们, 请务必注意不要让 getters 去改变显著的对象属性状态.</p>
+<p>EcmaScript 5 不推荐使用对象属性的 <code>getters</code> 和 <code>setters</code>.<br>然而, 如果你已经使用了它们, 请务必注意不要让 <code>getters</code> 去改变显著的对象属性状态.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 错误 -- 不要这样做.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">var</span> foo = &#123; get next() &#123; <span class="keyword">return</span> <span class="keyword">this</span>.nextId++; &#125; &#125;;</span><br></pre></td></tr></table></figure>
 <p><strong> 函数访问器 </strong></p>
-<p>也不对函数属性的 getters 和 setters 做要求. 然而, 如果已经使用来它们, 请将 getters 按 getFoo() 的形式命名, 而 setters 则必须命名成 setFoo(value) 的形式. (对布尔变量类型的 getters , isFoo() 形式的命名也可以接受, 而且这样同样也更加自然.)</p>
+<p>也不对函数属性的 <code>getters</code> 和 <code>setters</code> 做要求. 然而, 如果已经使用来它们, 请将 <code>getters</code> 按 <code>getFoo()</code> 的形式命名, 而 <code>setters</code> 则必须命名成 <code>setFoo(value)</code> 的形式. (对布尔变量类型的 <code>getters</code> , <code>isFoo()</code> 形式的命名也可以接受, 而且这样同样也更加自然.)</p>
 <p><strong> 命名空间 </strong></p>
 <p>JavaScript 自身并没有对包和命名空间的支持.</p>
 <p>全局变量的冲突非常难以调试, 而且当涉及多个项目集成时, 经常造成棘手的难题. 为了减少公共分享 JS 代码时可能出现的冲突问题, 我们应当遵循下列规范.</p>
@@ -312,7 +351,7 @@
 <p>在局部作用域中可以使用别名来引用完整包名能够增强可读性.<br>局部作用域中别名的命名应和完整包名的最后一部分相匹配.</p>
 <p>代码如下:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * @constructor</span><br><span class="line"> */</span></span><br><span class="line">some.long.namespace.MyClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * @param &#123;some.long.namespace.MyClass&#125; a</span><br><span class="line"> */</span></span><br><span class="line">some.long.namespace.MyClass.staticHelper = <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">myapp.main = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> MyClass = some.long.namespace.MyClass;</span><br><span class="line">  <span class="keyword">var</span> staticHelper = some.long.namespace.MyClass.staticHelper;</span><br><span class="line">  staticHelper(<span class="keyword">new</span> MyClass());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>不要在局部作用域中为命名空间创建别名.<br>仅仅当使用 goog.scope 时才能为命名空间创建别名.</p>
+<p>不要在局部作用域中为命名空间创建别名.<br>仅仅当使用 <code>goog.scope</code> 时才能为命名空间创建别名.</p>
 <p>不要像这样写:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">myapp.main = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> namespace = some.long.namespace;</span><br><span class="line">  namespace.MyClass.staticHelper(<span class="keyword">new</span> namespace.MyClass());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>避免访问一个别名的属性, 除非它是枚举类型.</p>
@@ -372,10 +411,10 @@
 <ul>
 <li>配合 goog.scope 使用别名</li>
 </ul>
-<p>当使用 the Closure Library 库时, 可以使用 goog.scope 来缩短对命名空间的引用.</p>
-<p>每个文件内只能使用一次 goog.scope 调用, 并且始终放置在全局作用域中.</p>
-<p>在打开 goog.scope(fuchuntion() { 代码块前, 需要保留且只保留一个空行, 上接 goog.provide 语句, goog.require 语句, 或者高层级的注释. 该代码块必须在文件最后一行处关闭, 即把 }); 放在文件末行处. 在代码块闭合处附加注释 // goog.scope, 并且将代码块与注释用分号和两个空格分隔.</p>
-<p>类似 C++ 命名空间, 不要在 goog.scope 内缩进, 直接顶格开始.</p>
+<p>当使用 the Closure Library 库时, 可以使用 <code>goog.scope</code> 来缩短对命名空间的引用.</p>
+<p>每个文件内只能使用一次 <code>goog.scope</code> 调用, 并且始终放置在全局作用域中.</p>
+<p>在打开 <code>goog.scope(fuchuntion() {</code> 代码块前, 需要保留且只保留一个空行, 上接 <code>goog.provide</code> 语句, <code>goog.require</code> 语句, 或者高层级的注释. 该代码块必须在文件最后一行处关闭, 即把 }); 放在文件末行处. 在代码块闭合处附加注释 <code>// goog.scope</code>, 并且将代码块与注释用分号和两个空格分隔.</p>
+<p>类似 C++ 命名空间, 不要在 <code>goog.scope</code> 内缩进, 直接顶格开始.</p>
 <p>只使用那些不会给其他对象使用的别名(例如多数构造函数, 枚举变量或者命名空间).</p>
 <p>不要像这样写(参看更下面的代码来了解如何对构造函数使用别名):</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// goog.scope 内</span></span><br><span class="line"><span class="keyword">var</span> Button = goog.ui.Button;</span><br><span class="line"></span><br><span class="line">Button = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; ... &#125;;</span><br><span class="line"><span class="comment">/*...*/</span></span><br></pre></td></tr></table></figure>
@@ -403,7 +442,7 @@
 <li>小括号</li>
 </ul>
 <p>仅用于需要处. 成对使用, 一般情况下只在语法和语义要求处用括号.</p>
-<p>在一元操作符(如 delete, typeof 和 void)或关键字(如 return, throw, case, in 或 new)后永远不要使用括号.</p>
+<p>在一元操作符(如 <code>delete</code>, <code>typeof</code> 和 <code>void</code>)或关键字(如 <code>return</code>, <code>throw</code>, <code>case</code>, <code>in</code> 或 <code>new</code>)后永远不要使用括号.</p>
 <ul>
 <li>字符串</li>
 </ul>
@@ -411,50 +450,50 @@
 <p>基于一致性的考虑, 优先使用单引号(‘)而不是双引号(“). 在创建包含 HTML 的字符串中这非常有用.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg = <span class="string">'This is some HTML'</span>;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>可见性(private 和 protected 字段)</li>
+<li>可见性(<code>private</code> 和 <code>protected</code> 字段)</li>
 </ul>
-<p>鼓励, 使用 JSDoc 中的 @private 和 @protected 来标注.</p>
-<p>我们推荐使用 JSDoc 中的 @private 和 @protected 来标注类, 函数, 属性的可见级别.</p>
+<p>鼓励, 使用 JSDoc 中的 <code>@private</code> 和 <code>@protected</code> 来标注.</p>
+<p>我们推荐使用 JSDoc 中的 <code>@private</code> 和 <code>@protected</code> 来标注类, 函数, 属性的可见级别.</p>
 <p>使用编译器标识 –jscomp_warning=visibility 可以开启对代码违背可见性的警告. 可以参考 <a href="http://code.google.com/p/closure-compiler/wiki/Warnings" target="_blank" rel="external">Closure Compiler Warnings</a>.</p>
-<p>私有全局变量和函数( @private )只能在同一文件中访问.</p>
-<p>标注了 @private 的构造函数只能在同一文件中实例化或者访问公共静态属性. 私有构造函数还可以在同一文件的任意位置使用 instanceof 操作符使用公共静态属性.</p>
-<p>全局变量, 全局函数和全局构造函数任何时候都不要用 @protected 标注.</p>
+<p>私有全局变量和函数( <code>@private</code> )只能在同一文件中访问.</p>
+<p>标注了 <code>@private</code> 的构造函数只能在同一文件中实例化或者访问公共静态属性. 私有构造函数还可以在同一文件的任意位置使用 <code>instanceof</code> 操作符使用公共静态属性.</p>
+<p>全局变量, 全局函数和全局构造函数任何时候都不要用 <code>@protected</code> 标注.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件 1.</span></span><br><span class="line"><span class="comment">// AA_PrivateClass_ 和 AA_init_ 可以访问因为它们是全局的并且在同一文件中.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * @private</span><br><span class="line"> * @constructor</span><br><span class="line"> */</span></span><br><span class="line">AA_PrivateClass_ = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** @private */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">AA_init_</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> AA_PrivateClass_();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AA_init_();</span><br></pre></td></tr></table></figure>
-<p>标注了 @private 的私有属性在同一文件以及它所属类的静态方法和实例方法中都可以访问. 但处于不同文件的所属类的子类则无法访问和重载该属性.</p>
-<p>标注了 @protected 的受限属性在同一文件, 以及包含这条属性的类及其任意子类的任意静态方法和实例方法中, 都可以访问.</p>
+<p>标注了 <code>@private</code> 的私有属性在同一文件以及它所属类的静态方法和实例方法中都可以访问. 但处于不同文件的所属类的子类则无法访问和重载该属性.</p>
+<p>标注了 <code>@protected</code> 的受限属性在同一文件, 以及包含这条属性的类及其任意子类的任意静态方法和实例方法中, 都可以访问.</p>
 <p>注意这些语义与 C++ 和 Java 有所区别, 它们允许在同一文件中访问私有和受限属性, 而非限制在同一个类和类继承中. 另外, 不像 C++, 私有属性不允许被子类重载.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件 1.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/** @constructor */</span></span><br><span class="line">AA_PublicClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">/** @private */</span></span><br><span class="line">  <span class="keyword">this</span>.privateProp_ = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/** @protected */</span></span><br><span class="line">  <span class="keyword">this</span>.protectedProp = <span class="number">4</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** @private */</span></span><br><span class="line">AA_PublicClass.staticPrivateProp_ = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** @protected */</span></span><br><span class="line">AA_PublicClass.staticProtectedProp = <span class="number">31</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** @private */</span></span><br><span class="line">AA_PublicClass.prototype.privateMethod_ = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** @protected */</span></span><br><span class="line">AA_PublicClass.prototype.protectedMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件 2.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * @return &#123;number&#125; The number of ducks we've arranged in a row.</span><br><span class="line"> */</span></span><br><span class="line">AA_PublicClass.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 合法访问这两条属性.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.privateProp_ + AA_PublicClass.staticPrivateProp_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件 3.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * @constructor</span><br><span class="line"> * @extends &#123;AA_PublicClass&#125;</span><br><span class="line"> */</span></span><br><span class="line">AA_SubClass = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 合法访问受限静态属性.</span></span><br><span class="line">  AA_PublicClass.staticProtectedProp = <span class="keyword">this</span>.method();</span><br><span class="line">&#125;;</span><br><span class="line">goog.inherits(AA_SubClass, AA_PublicClass);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * @return &#123;number&#125; The number of ducks we've arranged in a row.</span><br><span class="line"> */</span></span><br><span class="line">AA_SubClass.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 合法访问静态实例属性.</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.protectedProp;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>请注意在 JS 中, 类型(比如 AA<em>PrivateClass</em>)和类型的构造函数的可见性是没有区别的. 并没有办法让一个类型共有而令其构造函数为私有(因为很容易对构造函数使用别名从而破坏私有检查).</p>
+<p>请注意在 JS 中, 类型(比如 <code>AA_PrivateClass_</code>)和类型的构造函数的可见性是没有区别的. 并没有办法让一个类型共有而令其构造函数为私有(因为很容易对构造函数使用别名从而破坏私有检查).</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title]]>
     </summary>
     
-      <category term="JavaScript" scheme="http://crafteverywhere.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Google JS 代码风格指南（1）]]></title>
-    <link href="http://crafteverywhere.github.io/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%881%EF%BC%89/"/>
-    <id>http://crafteverywhere.github.io/2015/12/27/Google-JS-代码风格指南（1）/</id>
-    <published>2015-12-26T22:37:24.272Z</published>
-    <updated>2015-12-26T22:37:24.272Z</updated>
+    <link href="http://yoursite.com/2015/12/27/Google-JS-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC%E6%8C%87%E5%8D%97%EF%BC%881%EF%BC%89/"/>
+    <id>http://yoursite.com/2015/12/27/Google-JS-代码风格指南（1）/</id>
+    <published>2015-12-27T06:05:11.651Z</published>
+    <updated>2015-12-27T06:05:11.651Z</updated>
     <content type="html"><![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title="JavaScript 代码风格指南"></a>JavaScript 代码风格指南</h2><p>这份指南列出了编写 JavaScript 时需要遵守的规范, 指明哪些应该<strong>提倡</strong>, 哪些应该<del>避免</del>.<br>本文基于 google 的规范翻译整理(JavaScript 是许多 Google 开源项目使用的主要客户端脚本语言).</p>
 <h3 id="281_29"><a href="#281_29" class="headerlink" title="(1)"></a>(1)</h3><h3 id="JavaScript__u8BED_u8A00_u98CE_u683C_u89C4_u8303"><a href="#JavaScript__u8BED_u8A00_u98CE_u683C_u89C4_u8303" class="headerlink" title="JavaScript 语言风格规范"></a>JavaScript 语言风格规范</h3><h4 id="u53D8_u91CF"><a href="#u53D8_u91CF" class="headerlink" title="变量"></a>变量</h4><ul>
 <li>声明变量务必使用 var 关键字.</li>
 </ul>
-<p>如果未能使用 var 来声明, 变量就会暴露在全局上下文中, 这样很可能会与已有变量冲突. 此外，如果没有声明，也难以确定变量的作用域, 变量既有可能出现在局部作用域中, 也可能轻易地泄漏到 Document 或 Window 作用域中, 因此务必使用 var 声明变量.</p>
+<p>如果未能使用 <code>var</code> 来声明, 变量就会暴露在全局上下文中, 这样很可能会与已有变量冲突. 此外，如果没有声明，也难以确定变量的作用域, 变量既有可能出现在局部作用域中, 也可能轻易地泄漏到 <code>Document</code> 或 <code>Window</code> 作用域中, 因此务必使用 <code>var</code> 声明变量.</p>
 <h4 id="u5E38_u91CF"><a href="#u5E38_u91CF" class="headerlink" title="常量"></a>常量</h4><ul>
-<li>常量的规范命名应该使用这样的形式: NAMES_LIKE_THIS, 即使用大写字符, 并用下划线分隔单词.</li>
-<li>也可以使用用 @const 标记来指明它是常量.</li>
-<li>千万不要使用 const 关键词.</li>
+<li>常量的规范命名应该使用这样的形式: <code>NAMES_LIKE_THIS</code>, 即使用大写字符, 并用下划线分隔单词.</li>
+<li>也可以使用用 <code>@const</code> 标记来指明它是常量.</li>
+<li>千万不要使用 <code>const</code> 关键词.</li>
 </ul>
 <p>对于基本类型的常量, 遵循命名规范即可.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">* The number of seconds in a minute.</span><br><span class="line">* @type &#123;number&#125;</span><br><span class="line">*/</span></span><br><span class="line">goog.example.SECONDS_IN_A_MINUTE = <span class="number">60</span>;</span><br></pre></td></tr></table></figure>
-<p>对于非基本类型, 使用 @const 标记.</p>
+<p>对于非基本类型, 使用 <code>@const</code> 标记.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">* The number of seconds in each of the given units.</span><br><span class="line">* @type &#123;Object.&lt;number&gt;&#125;</span><br><span class="line">* @const</span><br><span class="line">*/</span></span><br><span class="line">goog.example.SECONDS_TABLE = &#123;</span><br><span class="line">minute: <span class="number">60</span>,</span><br><span class="line">  hour: <span class="number">60</span> * <span class="number">60</span>,</span><br><span class="line">  day: <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>使用 @const 标记可以提醒编译器它属于常量.<br>至于关键词 const, 由于 IE 无法识别, 因此尽量不要使用.</p>
+<p>使用 <code>@const</code> 标记可以提醒编译器它属于常量.<br>至于关键词 <code>const</code>, 由于 IE 无法识别, 因此尽量不要使用.</p>
 <h4 id="u5206_u53F7"><a href="#u5206_u53F7" class="headerlink" title="分号"></a>分号</h4><ul>
 <li>语句结尾总是使用分号.</li>
 </ul>
@@ -466,8 +505,8 @@
 <p>这几段代码运行效果如何呢？</p>
 <ol>
 <li>例1会抛出 JavaScript 报错. 这段代码会解释成一个返回值为42的函数附带一个匿名函数作为参数而被调用, 返回值 42 无法以一个匿名函数为参数被”调用”, 从而导致报错.</li>
-<li>例2中, 运行时很可能遇到 ‘no such property in undefined’ 错误, 原因是代码试图执行 x[ffVersion]isIE() .</li>
-<li>例3中 die() 总会被调用并将返回值赋给 THINGS_TO_EAT. 因为一个数组减一的值始终为 NaN, 不会与任何变量相等, 哪怕 resultOfOperation() 返回 NaN 等式也不会成立.</li>
+<li>例2中, 运行时很可能遇到 <code>‘no such property in undefined’</code> 错误, 原因是代码试图执行 <code>x[ffVersion]isIE()</code> .</li>
+<li>例3中 <code>die()</code> 总会被调用并将返回值赋给 <code>THINGS_TO_EAT</code>. 因为一个数组减一的值始终为 <code>NaN</code>, 不会与任何变量相等, 哪怕 <code>resultOfOperation()</code> 返回 <code>NaN</code> 等式也不会成立.</li>
 </ol>
 <p>为何会这样呢?</p>
 <p>JavaScript 要求语句以分号结尾, 除非当它觉得可以安全地推断语句的结束位置.<br>在上述几个例子中, 在语句中使用了函数声明, 对象或者数组字面量.<br>这种情况下,闭合的括号不足以作为语句结束的信号.<br>JavaScript 从来不会把接下来是<strong>中辍运算符</strong>或<strong>括号运算符</strong>的地方判断为语句结束位置.</p>
@@ -481,7 +520,7 @@
 </ul>
 <p>不要这样:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x) &#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>尽管多数脚本引擎支持代码块内声明函数, 但这一特性并不属于 ECMAScript 规范 (参见 ECMA-262, 条款13与14). 更糟之处在于它们实现方式互不兼容, 与未来的 ECMAScript 建议也相违背. ECMAScript only allows for Function Declarations in the root statement list of a script or function. 尝试使用以函数表达式初始化的变量来定义代码块内的函数.</p>
+<p>尽管多数脚本引擎支持代码块内声明函数, 但这一特性并不属于 ECMAScript 规范 (参见 ECMA-262, 条款13与14). 更糟之处在于它们实现方式互不兼容, 与未来的 ECMAScript 建议也相违背. ECMAScript 只允许脚本或函数在顶级语句块中进行函数声明.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (x) &#123;</span><br><span class="line">  <span class="keyword">var</span> foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="u5F02_u5E38"><a href="#u5F02_u5E38" class="headerlink" title="异常"></a>异常</h4><ul>
 <li>合理使用</li>
@@ -494,7 +533,7 @@
 <h4 id="u6807_u51C6_u7279_u6027"><a href="#u6807_u51C6_u7279_u6027" class="headerlink" title="标准特性"></a>标准特性</h4><ul>
 <li>总是优于非标准特性</li>
 </ul>
-<p>为了尽可能提高移植性和兼容性,应该总是优先使用标准特性而不是非标准特性(例如优先使用 string.charAt(3) 而不是 string[3] , 再比如说优先使用 DOM 原生方法去访问节点元素, 而非使用某个特定框架封装好的快捷引用).</p>
+<p>为了尽可能提高移植性和兼容性,应该总是优先使用标准特性而不是非标准特性(例如优先使用 <code>string.charAt(3)</code> 而不是 <code>string[3]</code> , 再比如说优先使用 DOM 原生方法去访问节点元素, 而非使用某个特定框架封装好的快捷引用).</p>
 <h4 id="u5C01_u88C5_u57FA_u672C_u7C7B_u578B"><a href="#u5C01_u88C5_u57FA_u672C_u7C7B_u578B" class="headerlink" title="封装基本类型"></a>封装基本类型</h4><ul>
 <li>一般情况下, 不要封装基本类型</li>
 </ul>
@@ -508,12 +547,12 @@
 <li>不推荐</li>
 </ul>
 <p>多级原型结构是 JavaScript 中实现继承的方式. 当你自定义了一个D类, 并且把另一个自定义的B类作为其原型, 就得到了一个多级原型结构.<br>这种原型结构会变得越来越复杂, 越来越难以维护.</p>
-<p>基于上述原因, 可以考虑使用 the Closure 库 中的 goog.inherits() 或其他类似库函数.</p>
+<p>基于上述原因, 可以考虑使用 the Closure 库 中的 <code>goog.inherits()</code> 或其他类似库函数.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">D</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  goog.base(<span class="keyword">this</span>)</span><br><span class="line">&#125;</span><br><span class="line">goog.inherits(D, B);</span><br><span class="line"></span><br><span class="line">D.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h4 id="u65B9_u6CD5_u548C_u6210_u5458_u53D8_u91CF_u5B9A_u4E49"><a href="#u65B9_u6CD5_u548C_u6210_u5458_u53D8_u91CF_u5B9A_u4E49" class="headerlink" title="方法和成员变量定义"></a>方法和成员变量定义</h4><ul>
-<li>/<em>* @constructor </em>/ function SomeConstructor() { this.someProperty = 1; } Foo.prototype.someMethod = function() { … };</li>
+<li><code>/** @constructor */ function SomeConstructor() { this.someProperty = 1; } Foo.prototype.someMethod = function() { ... };</code></li>
 </ul>
-<p>通过”new”有许多种方法为已经创建的对象添加方法和成员变量, 但推荐使用下面的方法:</p>
+<p>通过 <code>new</code> 有许多种方法为已经创建的对象添加方法和成员变量, 但推荐使用下面的方法:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Foo.prototype.bar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">/* ... */</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>而其他属性则推荐在构造器中初始化:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** @constructor */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.bar = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -522,39 +561,45 @@
 <p>现在的 JavaScript 引擎会基于对象的”形状”来优化, 向对象添加属性(包括覆写原型中设定的值)会改变对象的”形状”并导致性能降低.</p>
 </blockquote>
 <h4 id="u5220_u9664"><a href="#u5220_u9664" class="headerlink" title="删除"></a>删除</h4><ul>
-<li>优先使用 this.foo = null 而非关键字 delete</li>
+<li>优先使用 <code>this.foo = null</code> 而非关键字 <code>delete</code></li>
 </ul>
 <p>使用:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Foo.prototype.dispose = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.property_ = <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>而非:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Foo.prototype.dispose = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">delete</span> <span class="keyword">this</span>.property_;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>在现代的 Javascript 引擎中, 改变对象属性个数的速度远远比为其重新赋值慢.<br>除非真有必要从对象的迭代列表中移除一个键, 或者想要改变 <figure class="highlight"><figcaption><span>(key in obj)``` 的结果, 否则应当尽量避免使用关键字 ```delete```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;#### &#38381;&#21253;&#10;* &#21487;&#20197;, &#20294;&#21153;&#24517;&#35880;&#24910;.&#10;&#10;&#21019;&#24314;&#38381;&#21253;&#30340;&#33021;&#21147;&#21487;&#33021;&#26159; JS &#26368;&#26377;&#29992;&#20294;&#21364;&#32463;&#24120;&#34987;&#24573;&#30053;&#30340;&#29305;&#24615;&#20102;. &#21442;&#38405; a good description of how closures work.&#10;&#10;&#26377;&#19968;&#20214;&#20107;&#38656;&#35201;&#29282;&#35760;, &#38381;&#21253;&#20250;&#20445;&#25345;&#19968;&#20010;&#25351;&#21521;&#23427;&#23553;&#38381;&#20316;&#29992;&#22495;&#30340;&#25351;&#38024;. &#22240;&#27492;&#22312;&#20026; DOM &#20803;&#32032;&#38468;&#21152;&#38381;&#21253;&#26102;, &#21487;&#33021;&#20250;&#20135;&#29983;&#24490;&#29615;&#24341;&#29992;,&#36827;&#32780;&#23548;&#33268;&#20869;&#23384;&#27844;&#28431;. &#20363;&#22914;&#19979;&#38754;&#30340;&#20195;&#30721;:&#10;&#10;```javascript&#10;function foo(element, a, b) &#123;&#10;  element.onclick = function() &#123; /* uses a and b */ &#125;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个函数闭包会保持对 element, a 和 b 的引用, 即使它从未使用 element. 而 element 也保持了对闭包的引用, 因此导致了循环引用, 无法被 GC 回收. 如果遇到这种情况, 可以按照下面代码结构优化一下:</p>
+<p>在现代的 Javascript 引擎中, 改变对象属性个数的速度远远比为其重新赋值慢.<br>除非真有必要从对象的迭代列表中移除一个键, 或者想要改变 <code>if (key in obj)</code> 的结果, 否则应当尽量避免使用关键字 <code>delete</code></p>
+<h4 id="u95ED_u5305"><a href="#u95ED_u5305" class="headerlink" title="闭包"></a>闭包</h4><ul>
+<li>可以, 但务必谨慎.</li>
+</ul>
+<p>创建闭包的能力可能是 JS 最有用但却经常被忽略的特性了. 参阅 <a href="">a good description of how closures work</a>.</p>
+<p>有一件事需要牢记, 闭包会保持一个指向它封闭作用域的指针. 因此在为 DOM 元素附加闭包时, 可能会产生循环引用,进而导致内存泄漏. 例如下面的代码:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">element, a, b</span>) </span>&#123;</span><br><span class="line">  element.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/* uses a and b */</span> &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个函数闭包会保持对 <code>element</code>, <code>a</code> 和 <code>b</code> 的引用, 即使它从未使用 <code>element</code>. 而 <code>element</code> 也保持了对闭包的引用, 因此导致了循环引用, 无法被 GC 回收. 如果遇到这种情况, 可以按照下面代码结构优化一下:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">element, a, b</span>) </span>&#123;</span><br><span class="line">  element.onclick = bar(a, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/* uses a and b */</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="eval_28_29"><a href="#eval_28_29" class="headerlink" title="eval()"></a>eval()</h4><ul>
 <li>仅用于代码加载器和 REPL (交互式解释器) 中</li>
 </ul>
-<p>eval() 会导致混乱的语义. 当 eval() 中包含用户输入内容, 使用时还可能造成安全隐患. 还可以通过更好, 更清晰, 更安全的方式编写代码, 因此一般情况下不要使用 eval().</p>
-<p>解析 RPC 响应时应该总是使用 JSON 并且使用 JSON.parse() 而非 eval() 来读取结果.</p>
+<p><code>eval()</code> 会导致混乱的语义. 当 <code>eval()</code> 中包含用户输入内容, 使用时还可能造成安全隐患. 还可以通过更好, 更清晰, 更安全的方式编写代码, 因此一般情况下不要使用 <code>eval()</code>.</p>
+<p>解析 RPC 响应时应该总是使用 JSON 并且使用 <code>JSON.parse()</code> 而非 <code>eval()</code> 来读取结果.</p>
 <p>假设我们有一台服务器会返回类似下面的内容:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"Alice"</span></span>,</span><br><span class="line">  "<span class="attribute">id</span>": <span class="value"><span class="number">31502</span></span>,</span><br><span class="line">  "<span class="attribute">email</span>": <span class="value"><span class="string">"looking_glass@example.com"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
 <p>使用 eval() 的写法如下:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userInfo = <span class="built_in">eval</span>(feed);</span><br><span class="line"><span class="keyword">var</span> email = userInfo[<span class="string">'email'</span>];</span><br></pre></td></tr></table></figure>
-<p>feed 中可能包含的恶意 JS 代码会被 eval() 执行.</p>
+<p>feed 中可能包含的恶意 JS 代码会被 <code>eval()</code> 执行.</p>
 <p>采用如下写法:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userInfo = <span class="built_in">JSON</span>.parse(feed);</span><br><span class="line"><span class="keyword">var</span> email = userInfo[<span class="string">'email'</span>];</span><br></pre></td></tr></table></figure>
-<p>使用 JSON.parse , 无效的 JSON (也包括所有可执行的 JS 代码) 都会抛出异常.</p>
-<h4 id="with_28_29__7B_7D"><a href="#with_28_29__7B_7D" class="headerlink" title="with() {}"></a>with() {}</h4><ul>
+<p>使用 <code>JSON.parse</code>, 无效的 JSON (也包括所有可执行的 JS 代码) 都会抛出异常.</p>
+<h4 id="with_28_29__7B_7D"><a href="#with_28_29__7B_7D" class="headerlink" title="with() {}"></a><code>with() {}</code></h4><ul>
 <li>不要使用</li>
 </ul>
-<p>使用 with 会导致程序的语义含混不清. 因为 with 添加过来的对象包含的属性很可能会与局部变量冲突, 进而彻底地改变程序的原有含义.</p>
+<p>使用 <code>with</code> 会导致程序的语义含混不清. 因为 <code>with</code> 添加过来的对象包含的属性很可能会与局部变量冲突, 进而彻底地改变程序的原有含义.</p>
 <p>下面这段代码做了什么呢?</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> (foo) &#123;</span><br><span class="line">      <span class="keyword">var</span> x = <span class="number">3</span>;</span><br><span class="line">      <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>回答是: 一切都有可能发生. 局部变量 x 可能会被 foo 对象中的属性覆盖. 它甚至可能会有一个 setter, 从而导致在赋值3时执行许多其他代码. 别用 with.</p>
+<p>回答是: 一切都有可能发生. 局部变量 <code>x</code> 可能会被 <code>foo</code> 对象中的属性覆盖. 它甚至可能会有一个 setter, 从而导致在赋值3时执行许多其他代码. 别用 <code>with</code>.</p>
 <h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ul>
 <li>仅用于构造函数, 方法以及构造闭包.</li>
 </ul>
-<p>this 的语义非常棘手. 有时它引用全局对象(多数情况下), 有时属于调用者的作用域(使用 eval()时), 有时属于 DOM 树的某个节点(当为 HTML 属性绑定事件时), 有时属于某个新建的对象(使用构造函数时), 或者还有可能属于其他对象(当对函数使用 call() 或者 apply() 时).</p>
+<p><code>this</code> 的语义非常棘手. 有时它引用全局对象(多数情况下), 有时属于调用者的作用域(使用 <code>eval()</code> 时), 有时属于 DOM 树的某个节点(当为 HTML 属性绑定事件时), 有时属于某个新建的对象(使用构造函数时), 或者还有可能属于其他对象(当对函数使用 <code>call()</code> 或者 <code>apply()</code> 时).</p>
 <p>由于在使用上很容易出错, 因此应当限制它在下列的情况下按需使用:</p>
 <ul>
 <li>构造函数中;</li>
@@ -563,14 +608,14 @@
 <h4 id="for-in__u5FAA_u73AF"><a href="#for-in__u5FAA_u73AF" class="headerlink" title="for-in 循环"></a>for-in 循环</h4><ul>
 <li>只用于 object/map/hash 的遍历</li>
 </ul>
-<p>for-in 循环经常被错误地用于遍历数组元素. 然而这是非常容易导致错误的做法, 因为它并不会按 0 到 length - 1 的顺序去进行遍历, 而是会遍历这个对象包括其原型链上所有的键值. 下面是几个失败时的例子:</p>
+<p><code>for-in</code> 循环经常被错误地用于遍历数组元素. 然而这是非常容易导致错误的做法, 因为它并不会按 <code>0</code> 到 <code>length - 1</code> 的顺序去进行遍历, 而是会遍历这个对象包括其原型链上所有的键值. 下面是几个失败时的例子:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> arr) &#123;</span><br><span class="line">    print(arr[key]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">printArray([<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);  <span class="comment">// 这里没有问题.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>);</span><br><span class="line">printArray(a);  <span class="comment">// 出错了.</span></span><br><span class="line"></span><br><span class="line">a = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'*'</span>);</span><br><span class="line">printArray(a);  <span class="comment">// 出错了.</span></span><br><span class="line"></span><br><span class="line">a = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.buhu = <span class="string">'wine'</span>;</span><br><span class="line">printArray(a);  <span class="comment">// 又出错了.</span></span><br><span class="line"></span><br><span class="line">a = <span class="keyword">new</span> <span class="built_in">Array</span>;</span><br><span class="line">a[<span class="number">3</span>] = <span class="number">3</span>;</span><br><span class="line">printArray(a);  <span class="comment">// 又出错了.</span></span><br></pre></td></tr></table></figure>
 <p>遍历数组用最普通的 for 循环即可.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printArray</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> l = arr.length;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; l; i++) &#123;</span><br><span class="line">    print(arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="u5173_u8054_u6570_u7EC4"><a href="#u5173_u8054_u6570_u7EC4" class="headerlink" title="关联数组"></a>关联数组</h4><ul>
-<li>永远不要将 Array 作为 map/hash/associative 数组使用.</li>
+<li>永远不要将 <code>Array</code> 作为 map/hash/associative 数组使用.</li>
 </ul>
-<p>不应该允许将 Array 作为关联数组使用, 换一个更准确的说法则是, 数组中不允许使用非整型作为索引值. 如果你需要一个 map/hash 类型, 请使用 Object 而非 Array, 因为在这种情况下, 你真正需要的也只是 Object 的特性而非 Array 的特性. Array也只是扩展自 Object 类型 (就像 Date, RegExp 或者 String 一样).</p>
+<p>不应该允许将 <code>Array</code> 作为关联数组使用, 换一个更准确的说法则是, 数组中不允许使用非整型作为索引值. 如果你需要一个 map/hash 类型, 请使用 <code>Object</code> 而非 <code>Array</code>, 因为在这种情况下, 你真正需要的也只是 <code>Object</code> 的特性而非 <code>Array</code> 的特性. <code>Array</code> 也只是扩展自 <code>Object</code> 类型 (就像 <code>Date</code>, <code>RegExp</code> 或者 <code>String</code> 一样).</p>
 <h4 id="u591A_u884C_u5B57_u7B26_u4E32_u5B57_u9762_u91CF"><a href="#u591A_u884C_u5B57_u7B26_u4E32_u5B57_u9762_u91CF" class="headerlink" title="多行字符串字面量"></a>多行字符串字面量</h4><ul>
 <li>不要使用</li>
 </ul>
@@ -582,13 +627,13 @@
 <h4 id="Array__u548C_Object__u5B57_u9762_u91CF"><a href="#Array__u548C_Object__u5B57_u9762_u91CF" class="headerlink" title="Array 和 Object 字面量"></a>Array 和 Object 字面量</h4><ul>
 <li>可以使用</li>
 </ul>
-<p>使用 Array 和 Object 字面量而不是 Array 和 Object 构造器.</p>
-<p>Array 的构造函数很容易因为传参不当而造成错误.</p>
+<p>使用 <code>Array</code> 和 <code>Object</code> 字面量而不是 <code>Array</code> 和 <code>Object</code> 构造器.</p>
+<p><code>Array</code> 的构造函数很容易因为传参不当而造成错误.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 长度为3.</span></span><br><span class="line"><span class="keyword">var</span> a1 = <span class="keyword">new</span> <span class="built_in">Array</span>(x1, x2, x3);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 长度为2.</span></span><br><span class="line"><span class="keyword">var</span> a2 = <span class="keyword">new</span> <span class="built_in">Array</span>(x1, x2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果x1是一个自然数, 则数组长度会变成 x1.</span></span><br><span class="line"><span class="comment">// 如果x1是一个数字, 但不是自然数, 这里则会抛出一个异常.</span></span><br><span class="line"><span class="comment">// 否则数组会拥有一个值为x1的元素.</span></span><br><span class="line"><span class="keyword">var</span> a3 = <span class="keyword">new</span> <span class="built_in">Array</span>(x1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 长度为0.</span></span><br><span class="line"><span class="keyword">var</span> a4 = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br></pre></td></tr></table></figure>
 <p>基于上述原因, 当有人重构代码将传入参数由两个变为一个时, 数组就可能变成非预期的长度.</p>
 <p>为了避免出现这种奇怪的情况, 总是使用更加可读的数组字面量来声明数组.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [x1, x2, x3];</span><br><span class="line"><span class="keyword">var</span> a2 = [x1, x2];</span><br><span class="line"><span class="keyword">var</span> a3 = [x1];</span><br><span class="line"><span class="keyword">var</span> a4 = [];</span><br></pre></td></tr></table></figure>
-<p>虽然 Object 构造器并不存在类似问题, 但鉴于可读性和一致性考虑, 最好也使用字面量来声明.</p>
+<p>虽然 <code>Object</code> 构造器并不存在类似问题, 但鉴于可读性和一致性考虑, 最好也使用字面量来声明.</p>
 <p>不要使用:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> o2 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">o2.a = <span class="number">0</span>;</span><br><span class="line">o2.b = <span class="number">1</span>;</span><br><span class="line">o2.c = <span class="number">2</span>;</span><br><span class="line">o2[<span class="string">'strange key'</span>] = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
 <p>应当写成:</p>
@@ -596,7 +641,7 @@
 <h4 id="u4FEE_u6539_u5185_u7F6E_u5BF9_u8C61_u7684_u539F_u578B"><a href="#u4FEE_u6539_u5185_u7F6E_u5BF9_u8C61_u7684_u539F_u578B" class="headerlink" title="修改内置对象的原型"></a>修改内置对象的原型</h4><ul>
 <li>不要这样做</li>
 </ul>
-<p>尝试修改内建对象, 诸如 Object.prototype 或者 Array.prototype 的行为应该被严格禁止. 修改其他内建对象, 比如 Function.prototype 虽然没有那么危险, 但在生产环境中依然会带来调试问题, 应当尽量避免.</p>
+<p>尝试修改内建对象, 诸如 <code>Object.prototype</code> 或者 <code>Array.prototype</code> 的行为应该被严格禁止. 修改其他内建对象, 比如 <code>Function.prototype</code> 虽然没有那么危险, 但在生产环境中依然会带来调试问题, 应当尽量避免.</p>
 <h4 id="IE_u4E0B_u7684_u6761_u4EF6_u6CE8_u91CA"><a href="#IE_u4E0B_u7684_u6761_u4EF6_u6CE8_u91CA" class="headerlink" title="IE下的条件注释"></a>IE下的条件注释</h4><ul>
 <li>不要使用</li>
 </ul>
@@ -608,7 +653,7 @@
     <![CDATA[<h2 id="JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357"><a href="#JavaScript__u4EE3_u7801_u98CE_u683C_u6307_u5357" class="headerlink" title]]>
     </summary>
     
-      <category term="JavaScript" scheme="http://crafteverywhere.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   
