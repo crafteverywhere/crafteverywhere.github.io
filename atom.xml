@@ -4,7 +4,7 @@
   <subtitle><![CDATA[craft‘s note]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-28T18:34:11.856Z</updated>
+  <updated>2015-12-28T18:36:11.885Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[使用 nginx 和 nginx-rtmp 搭建流媒体服务器]]></title>
     <link href="http://yoursite.com/2015/12/29/%E4%BD%BF%E7%94%A8nginx%E5%92%8Cnginx-rtmp%E6%90%AD%E5%BB%BA%E6%B5%81%E5%AA%92%E4%BD%93%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     <id>http://yoursite.com/2015/12/29/使用nginx和nginx-rtmp搭建流媒体服务器/</id>
-    <published>2015-12-28T18:34:11.856Z</published>
-    <updated>2015-12-28T18:34:11.856Z</updated>
+    <published>2015-12-28T18:36:11.885Z</published>
+    <updated>2015-12-28T18:36:11.885Z</updated>
     <content type="html"><![CDATA[<p>我们在阿里云上搭建流媒体服务器, 服务端环境为 ubuntu14.04.</p>
 <h2 id="u5B89_u88C5"><a href="#u5B89_u88C5" class="headerlink" title="安装"></a>安装</h2><p>首先下载依赖:</p>
 <ul>
