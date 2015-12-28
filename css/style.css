@@ -606,11 +606,11 @@ div {
 
 /* syntax highlight*/
 figure.highlight {
-  background: #fff;
+  background: #242424;
   margin: 10px 0;
   border-radius: 3px;
   line-height: 1.2em;
-  color: #333;
+  color: #ddd;
   border: 1px solid #d9d9d9;
   overflow: hidden; }
   figure.highlight table {
@@ -656,7 +656,7 @@ figure.highlight {
   margin: 0 0 5px 0; }
 
 .highlight .comment {
-  color: #969896; }
+  color: #c0c0c0; }
 
 .highlight .string {
   color: #df5000; }
