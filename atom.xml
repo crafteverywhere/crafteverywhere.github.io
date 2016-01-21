@@ -4,7 +4,7 @@
   <subtitle><![CDATA[craft‘s note]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-28T18:38:00.846Z</updated>
+  <updated>2016-01-21T11:55:28.991Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[igcc:c/c++解释器]]></title>
+    <link href="http://yoursite.com/2016/01/21/igcc-REPL-for-c-c/"/>
+    <id>http://yoursite.com/2016/01/21/igcc-REPL-for-c-c/</id>
+    <published>2016-01-21T11:55:29.019Z</published>
+    <updated>2016-01-21T11:55:28.991Z</updated>
+    <content type="html"><![CDATA[<p>最近在复习c/c++，苦于没有类似一些动态语言所提供的repl环境，难以方便地测试语法特性或实践短小简单的代码。</p>
+<p>在网上搜罗了一圈，发现果然有已经解决了类似需求的轮子。<br>对比下来，igcc（交互式gcc编译器）是其中比较好用的一个。</p>
+<p>项目主页见这里：<a href="http://www.artificialworlds.net/wiki/IGCC/IGCC" target="_blank" rel="external">http://www.artificialworlds.net/wiki/IGCC/IGCC</a></p>
+<p>作者提供了比较清晰明了的安装以及使用指南。<br>目前最新版本是0.2, 上次更新是12年，看起来不太可能有后续更新了。<br>实际上sourceforge上的下载数目前都还是个位数，并没有多少人使用过，看来这个需求可能真的过于小众。</p>
+<p>严格讲，igcc并非真正意义上的c/c++解释器，它利用python搭建了一个交互环境，封装了一些gcc的功能，其实际所执行的工作只是在录入每一行代码后编译并执行当前程序。<br>因此，它并不具有很多解释器提供的开箱计算器功能，只能执行完整且正确的c/c++代码。<br>当录入包含语法错误的代码时，它确实会像其他repl立即报错，但却依然会将错误代码保存到当前程序中，你需要通过预设的命令手动撤回所输入的命令。<br>输入<code>.h</code>你可以查看所有的预设命令。</p>
+<p>尽管功能有限，但对学习者来说它已经足够方便。希望有类似（奇怪）需求的同学可以试用一下。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近在复习c/c++，苦于没有类似一些动态语言所提供的repl环境，难以方便地测试语法特性或实践短小简单的代码。</p>
+<p>在网上搜罗了一圈，发现果然有已经解决了类似需求的轮子。<br>对比下来，igcc（交互式gcc编译器）是其中比较好用的一个。</p>
+<p>项目主]]>
+    </summary>
+    
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[使用 nginx 和 nginx-rtmp 搭建流媒体服务器]]></title>
