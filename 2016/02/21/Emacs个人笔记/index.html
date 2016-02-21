@@ -13,7 +13,7 @@
 <p>删除/剪切操作如下:<br><code>&lt;del&gt;</code> 删去 point 所在位置的前一个字符.<br><code>C-d</code> 删去 point 所在位置的字符, d 代表 delete.<br><code>M-&lt;DEL&gt;</code> 剪切 point 所在位置的前一个词.<br><code>M-d</code> 剪切 point 所在位置的后一个词.<br><code>C-k</code> 剪切 point 所在位置到行尾的字符, 如果为空行则剪切行, k 代表 kill.<br><code>M-k</code> 剪切 point 所在位置到行首的字符.<br><code>C-w</code> 剪切当前选中的区域, 如没有选中区域, 剪切当前行.<br><code>C-&lt;SPC&gt;</code> 配合光标移动操作来选中一段文本. 在中文环境下会与输入法的热键冲突.<br><code>C-@</code> 效果等同 <code>C-&lt;SPC&gt;</code>.</p>
 <p>实际运用时需要灵活使用多对组合键完成功能: 例如, 剪切一行的操作也可以用 <code>C-a C-k C-k</code>.</p>
 <p>删除与剪切操作略有区别. 删除的字符不会保存, 而剪切的文本会保存在剪贴板中, 可以使用 <code>C-y</code> 将剪贴板的内容插入到 buffer 中 point 所在位置, 这里 y 代表 yank, 中文教程中翻译为召回.<br>连续使用的剪切操作会将内容保存在同一个剪贴板中, 使用 <code>C-y</code> 便能一次性将其召回.<br>如果要插入更老的剪切内容, 可以使用 <code>M-y</code>. 多次使用 <code>M-y</code> 能够轮询所有可用的剪贴板.</p>
-<p>撤销操作:<br><code>C-/</code> 撤销上一个命令带来的所有改变.<br>与之等效的还有 <code>C-_</code>, ‘C-x u’.</p>
+<p>撤销操作:<br><code>C-/</code> 撤销上一个命令带来的所有改变.<br>与之等效的还有 <code>C-_</code>, <code>C-x u</code>.</p>
 <p>为操作调用的函数附加参数:<br><code>C-u</code> 有些函数接受额外的参数. 使用键和弦 <code>C-u</code> 后可以输入一个数, 作为下一个命令调用的函数的参数传入. 数字参数的效果通常是重复执行函数的次数, 例如, <code>C-u 20 C-f</code> 的效果是 point 向前移动 20 个字符. 也有例外, 比如 <code>C-v</code> 和 <code>M-v</code> 在接受数字参数后, 参数将指定滚屏的行数而非屏数.<br><code>C-[NUM]</code> [NUM] 限制为 0~9 的数字. 效果类似 <code>C-u</code>.<br><code>M-[NUM]</code> 与 <code>C-[NUM]</code> 等效.<br>用以上命令便可以重复执行多次同一个函数了.</p>
 <p>中止操作:<br><code>C-g</code> 中止失去响应或者执行过久的命令. 也可以用于取消数字参数和输入了一半的命令.</p>
 <p>与 frame, window, buffer 相关的命令:<br>这种命令多以键和弦 <code>C-x</code> 开头.<br>例如回到 buffer 首部除了 <code>M-&lt;</code> 外也可以用 <code>C-x [</code>; 跳往 buffer 尾部除了 <code>M-&gt;</code> 还可以用 <code>C-x ]</code>.</p>
