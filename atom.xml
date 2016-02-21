@@ -4,7 +4,7 @@
   <subtitle><![CDATA[craft‘s note]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-02-21T13:49:31.154Z</updated>
+  <updated>2016-02-21T13:54:33.432Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[Emacs入门笔记]]></title>
     <link href="http://yoursite.com/2016/02/21/Emacs%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2016/02/21/Emacs个人笔记/</id>
-    <published>2016-02-21T13:49:31.190Z</published>
-    <updated>2016-02-21T13:49:31.154Z</updated>
+    <published>2016-02-21T13:54:33.432Z</published>
+    <updated>2016-02-21T13:54:33.432Z</updated>
     <content type="html"><![CDATA[<p>春节前开始正式地系统学习 emacs, 目前已经基本上能够做到正常使用了.<br>这篇文章并不是一篇有效的 emacs 教程, 主要用来记录学习过程中的一些心得.</p>
 <p>接触 Emacs 之前以使用 vim/sublime 为主. 在这次学习之前, 对Emacs所知甚少, 唯一印象深刻的命令是如何关掉它: <code>C-x C-c</code>, 算是非常彻底的从零开始.<br>这里先简单介绍一点有关 emacs 的基本常识.<br>Vim 和 emacs 都属于尽可能发挥键盘威力的文本编辑器: 但不同之处在于, vim 选择区分不同的模式分别用于命令和文本编辑, 而 emacs 采用了组合键的方式, 即使用键盘上的 Esc, Meta, Alt, Ctrl, Shift (因此坊间也戏称 emacs 为这一组功能键的头字母简写) 等功能键与字母区的按键组合来触发特定功能.<br>使用 emacs 时, 我们经常会将几个按键同时按下, 术语称之为键和弦, 在文档中, 用连字符将按键名相连来表示一个键和弦, 例如 <code>C-?</code> 表示将 Ctrl 键与 ? 按键一同按下, <code>M-?</code> 表示将 Meta 键与 ? 按键一同按下(作为非常古老的软件, emacs 的许多术语沿袭自计算机的洪荒年代, 现代美式键盘上没有 Meta 键, 我们使用 Alt 键作为替代; 有些键盘上也没有 Alt 键, 这时可以先按下 Esc 键然后释放, 再按 ? 键, 这种组合操作与 <code>M-?</code> 等效). 有些命令还需要配合上档键 Shift完成, 例如, 回到当前打开文件的首部的指令是 <code>M-&lt;</code>, 实际输入时需要同时按住 Alt, Shift 和 , 键.<br>Emacs自带的教程就是非常好的入门资料, 自然地, 我也选择从它来起步. 一边阅读一边参照着教程的指导进行练习, 认真过上几遍基本的操作就没什么大的问题了.<br>开启 emacs 内置教程的组合键为 <code>C-h t</code>, 意为同时按下 Ctrl 和 h, 松开, 然后再按 t 键. 如果系统的语言设置为中文, 则会默认开启已翻译中文的教程. 教程的组织形式简单明了, 还可以随时进行练习. 非常贴心的一点是, 修改过的 emacs 默认绑定键位也会在教程相应位置出现提示. Emacs 内置的文档也是必不可少的学习资料. 如果不确定某个组合键的功能, 遗忘了 ‘C-f’ 的作用, 可以使用 <code>C-h k C-f</code> 来查看对应的文档. 命令中的 k 指代 keyboard, 与之对应还有一条查询函数功能的命令: ‘C-h f’, 其中 f 指代 function. 使用组合键触发的功能还可以通过函数调用的方式来激活. 即使用 <code>M-x 函数名</code>. 许多函数会绑定到一些特定的组合键上. 这些函数大多数用 elisp 写成, 少数出于性能考虑使用 C 语言编写. Emacs 实际上可以视为一个 elisp 的解释环境, 其大多数的功能都通过这些函数来实现, 也允许用户自定义自己的 elisp 函数.<br>elisp 即 emacs lisp, 是一种专门用于 emacs 的 lisp 方言. 网上入门教程很多, 这里推荐看: <a href="https://learnxinyminutes.com/docs/elisp/" target="_blank" rel="external">learn x iny minutes where x = elisp</a>, 你可以将 el 格式(即 elisp 语言文件格式)下载到本地用 emacs 打开, 在实践过程中学习. 之后 emacs 的配置也需要懂一点 elisp 知识.</p>
 <p>Emacs 的一组需要了解的特有术语和概念:<br>buffer:<br>简单地理解, emacs 中正在处理的一切都可以视为一个 buffer, 例如一个正在编辑的文件.<br>frame:<br>类似 windows 系统中 window (窗口)的概念.<br>window:<br>中文翻译为窗格, emacs 允许将一个 frame 划分为多个 window, 在不同的 window 中加载不同的 buffer 进行编辑操作. 出于历史原因, frame 与 window 与现在通用的术语含义有所区别.<br>point:<br>当前 window 中光标所在的位置.<br>echo area 与 minibuffer:<br>Echo area 位于 emacs 的 frame 的最下方, 会回显命令效果. 也是显示组合键输入缓存的地方. 比如 当 point 位于某个 elisp 函数后, 可以用’C-x C-e’ 执行它, 并将结果显示在 echo area 区域.(如果使用 ‘C-j’ 来执行函数, 结果会显示在 buffer 中 point 所在的位置.) 有的命令需要交互式地输入信息, 此时 echo area 会载入一个 minibuffer 供你进行编辑.</p>
@@ -47,7 +47,7 @@
 <p>撤销递归编辑:<br>当一次操作没有完成又进行了另外一次操作时, 将进入递归编辑状态(RECURSIVE EDITING LEVELS). 使用 <code>ESC ESC ESC</code> 可以退出递归编辑状态, 这条命令也可以用来关掉多余的 window 或者离开 minibuffer 区域.</p>
 <p>其他命令:<br>emacs 提供的函数数量非常庞大, 而组合键的数量十分有限, 因此更多的函数调用通过<br><code>M-x 函数名</code>的方式来实现.</p>
 <p>文本模式:<br>为了针对不同类型的文件和编辑操作使用不同的配置, Emacs 可以设置为不同的文本模式. 不同的文本模式下, emacs 处理文本的方式会有所区别.<br>文本模式会显示在 echo area 上方的状态栏 mode line 中. 状态栏显示的信息可以通过配置进行修改, 一般在光标位置信息右侧显示的就是文本模式信息.<br>文本模式分两类: 主模式 (major mode) 和辅模式 (minor mode). 主模式提供基本的配置, 辅模式可以提供额外的一些小功能. Emacs 同时有且只能设置为一种主模式, 但是可以设置多个辅模式.<br>缺省模式称为 Funamental, 它是一种主模式.<br>处理自然语言(如写日记)可以切换到 text-mode 下: 使用命令 <code>M-x text-mode</code> 即可. 咋看之下与缺省模式毫无区别, 但细心一些会发现 M-f 和 M-b 等处理单位为词的命令将单引号(‘)视为词的一部分了.<br>使用命令 <code>M-x auto-fill-mode</code> 可以打开一个具有自动换行功能的辅模式, 自动换行的行宽通过 <code>C-u</code> 向 <code>C-x f</code> 传入一个数字参数来设置, 默认设置一般为 70.<br>再次输入开启文本的模式命令能够关闭该模式.</p>
-<p>搜索:<br><code>C-s</code> 从 point 位置向下文搜索.<br>这种搜索会从起点开始搜寻目标, 并将 point 移动到目标位置. 搜索并不是在命令完成后开始的, 一旦开始输入目标字符串, emacs 就会开始试图查找目标, 并将光标移动到符合结果的位置去, 如果使用 <code>&lt;DEL&gt;</code> 删除了目标字符串的一个字符, 光标会跳回上一个符合结果的目标处. 输入完成后, 再次按下 <code>C-s</code> 可以查找下一个符合的结果. 这种搜索方式称为增量搜索.<br>对应的命令还有:<br><code>C-r</code> 从 point 位置向上文搜索.<br>默认的这两条指令不是基于正则表达式的, 在我目前的配置中, 它们被替换为了基于正则表达式搜索的版本.</p>
+<p>搜索:<br><code>C-s</code> 从 point 位置向下文搜索.<br>这种搜索会从起点开始搜寻目标, 并将 point 移动到目标位置. 搜索并不是在命令完成后开始的, 一旦开始输入目标字符串, Emacs 就会开始试图查找目标, 并将光标移动到符合结果的位置去, 如果使用 <code>&lt;DEL&gt;</code> 删除了目标字符串的一个字符, 光标会跳回上一个符合结果的目标处. 输入完成后, 再次按下 <code>C-s</code> 可以查找下一个符合的结果. 这种搜索方式称为增量搜索.<br>对应的命令还有:<br><code>C-r</code> 从 point 位置向上文搜索.<br>默认的这两条指令不是基于正则表达式的, 在我目前的配置中, 它们被替换为了基于正则表达式搜索的版本.</p>
 <p>文档与帮助:<br>这类命令多以 <code>C-h</code> 打头.<br><code>C-h m</code> 查看当前文本模式的文档.<br><code>C-h k</code> 查看组合键文档.<br><code>C-h f</code> 查看函数文档.<br><code>C-h v</code> 查看当前环境中某个变量绑定的值.<br><code>C-h t</code> 自带教程.</p>
 ]]></content>
     <summary type="html">
